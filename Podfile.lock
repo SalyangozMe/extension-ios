@@ -1,0 +1,31 @@
+PODS:
+  - Alamofire (3.3.1)
+  - AlamofireObjectMapper (3.0.0):
+    - Alamofire (~> 3.2)
+    - ObjectMapper (~> 1.0)
+  - KeychainAccess (2.3.5)
+  - ObjectMapper (1.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireObjectMapper (~> 3.0)
+  - KeychainAccess (from `https://github.com/kishikawakatsumi/KeychainAccess.git`)
+
+EXTERNAL SOURCES:
+  KeychainAccess:
+    :git: https://github.com/kishikawakatsumi/KeychainAccess.git
+
+CHECKOUT OPTIONS:
+  KeychainAccess:
+    :commit: c55a8553d325300f9f671062d3b5370cff12cf94
+    :git: https://github.com/kishikawakatsumi/KeychainAccess.git
+
+SPEC CHECKSUMS:
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  AlamofireObjectMapper: 2d16585d06177be0116d76de73497e77437798af
+  KeychainAccess: e283c1981a6c5655e1984cd411c6faf16fa165ae
+  ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
+
+PODFILE CHECKSUM: d4b80392e7917802eb65f31fa0e48a69616eb3a9
+
+COCOAPODS: 1.0.0.rc.1
