@@ -39,6 +39,7 @@
 		B396DA4F1D09A4D700D9133B /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B396DA4E1D09A4D700D9133B /* Wireframe.swift */; };
 		B396DA651D09B3FB00D9133B /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B396DA641D09B3FB00D9133B /* UIFontExtensions.swift */; };
 		B398AF431D0A535100D26C5B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B398AF421D0A535100D26C5B /* CoreData.framework */; };
+		B39E65151D0AF2C8005937C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3637F561D086D2D002A3AFF /* Assets.xcassets */; };
 		B3DE07401D0A2D1000D6B6FF /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3637F691D08744E002A3AFF /* TwitterKit.framework */; };
 		B3DE07761D0A304A00D6B6FF /* Pods_SalyangozKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE07751D0A304900D6B6FF /* Pods_SalyangozKit.framework */; };
 		B3DE07791D0A323C00D6B6FF /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3B4AE941D0A2834002691A8 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -523,6 +524,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B39E65151D0AF2C8005937C0 /* Assets.xcassets in Resources */,
 				B36F37C61D0A040400A33958 /* MainInterface.storyboard in Resources */,
 				B3DE077E1D0A40E400D6B6FF /* SharePreprocessor.js in Resources */,
 			);
