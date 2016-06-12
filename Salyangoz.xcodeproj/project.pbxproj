@@ -7,19 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		87B9D53C7A115B898B0D9B5D /* Pods_Salyangoz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2AE48F649CC57CA320A663 /* Pods_Salyangoz.framework */; };
+		87B9D53C7A115B898B0D9B5D /* Pods_Salyangoz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2AE48F649CC57CA320A663 /* Pods_Salyangoz.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B320DEA71D0B83BD00CD9A59 /* SalyangozButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEA61D0B83BD00CD9A59 /* SalyangozButton.swift */; };
+		B320DEAF1D0B899600CD9A59 /* RecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEAE1D0B899600CD9A59 /* RecentCell.swift */; };
+		B320DEB21D0B8BD800CD9A59 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B320DEB01D0B8BC700CD9A59 /* RobotoCondensed-Italic.ttf */; };
+		B320DEB31D0B8BD800CD9A59 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B320DEB11D0B8BC700CD9A59 /* RobotoCondensed-Regular.ttf */; };
+		B320DEB81D0B974D00CD9A59 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEB71D0B974D00CD9A59 /* LoginResponse.swift */; };
+		B320DEBA1D0B99CA00CD9A59 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEB91D0B99CA00CD9A59 /* Post.swift */; };
+		B320DEBC1D0BA53A00CD9A59 /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEBB1D0BA53A00CD9A59 /* RecentView.swift */; };
+		B320DEBE1D0BA78500CD9A59 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEBD1D0BA78500CD9A59 /* HomeView.swift */; };
+		B320DEC11D0BA81300CD9A59 /* BarAppearances.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEC01D0BA81300CD9A59 /* BarAppearances.swift */; };
+		B320DEC31D0BAC3C00CD9A59 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEC21D0BAC3C00CD9A59 /* UIViewControllerExtension.swift */; };
+		B320DEC51D0BB77D00CD9A59 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEC41D0BB77D00CD9A59 /* UIColorExtension.swift */; };
+		B33636DE1D0C29D100FE3CF0 /* UserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33636DD1D0C29D100FE3CF0 /* UserProtocol.swift */; };
+		B33636E11D0C2DE700FE3CF0 /* FeedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33636E01D0C2DE700FE3CF0 /* FeedUser.swift */; };
 		B353246A1D0A2A2F00DA1476 /* SalyangozKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36F37DA1D0A1FBD00A33958 /* SalyangozKit.framework */; };
 		B3637F501D086D2D002A3AFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3637F4F1D086D2D002A3AFF /* AppDelegate.swift */; };
 		B3637F521D086D2D002A3AFF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3637F511D086D2D002A3AFF /* LoginView.swift */; };
 		B3637F551D086D2D002A3AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3637F531D086D2D002A3AFF /* Main.storyboard */; };
 		B3637F571D086D2D002A3AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3637F561D086D2D002A3AFF /* Assets.xcassets */; };
 		B3637F5A1D086D2D002A3AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3637F581D086D2D002A3AFF /* LaunchScreen.storyboard */; };
-		B3637F6C1D08744E002A3AFF /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3637F681D08744E002A3AFF /* Fabric.framework */; };
+		B3637F6C1D08744E002A3AFF /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3637F681D08744E002A3AFF /* Fabric.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B3637F6E1D08744E002A3AFF /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B3637F6A1D08744E002A3AFF /* TwitterKitResources.bundle */; };
-		B3637F6F1D08744E002A3AFF /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3637F6B1D08744E002A3AFF /* TwitterCore.framework */; };
+		B3637F6F1D08744E002A3AFF /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3637F6B1D08744E002A3AFF /* TwitterCore.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B3637F741D08AE96002A3AFF /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3637F731D08AE96002A3AFF /* Credentials.plist */; };
 		B3637F761D08B07C002A3AFF /* NSBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3637F751D08B07C002A3AFF /* NSBundleExtension.swift */; };
-		B3637F861D0998CA002A3AFF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3637F851D0998CA002A3AFF /* HomeView.swift */; };
 		B3637F881D0999A6002A3AFF /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3637F871D0999A6002A3AFF /* UIStoryboardExtension.swift */; };
 		B3637F8A1D099B4F002A3AFF /* UIActivityIndicatorViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3637F891D099B4F002A3AFF /* UIActivityIndicatorViewExtension.swift */; };
 		B36F379D1D09BD9300A33958 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B396DA561D09B2D100D9133B /* Roboto-Italic.ttf */; };
@@ -35,19 +47,19 @@
 		B36F37E21D0A1FBD00A33958 /* SalyangozKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B36F37DA1D0A1FBD00A33958 /* SalyangozKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B36F37E71D0A1FCB00A33958 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36F37E61D0A1FCB00A33958 /* DataManager.swift */; };
 		B36F37E91D0A20B500A33958 /* SalyangozAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36F37E81D0A20B500A33958 /* SalyangozAPI.swift */; };
-		B36F37EB1D0A20BE00A33958 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36F37EA1D0A20BE00A33958 /* User.swift */; };
+		B36F37EB1D0A20BE00A33958 /* SessionUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36F37EA1D0A20BE00A33958 /* SessionUser.swift */; };
 		B396DA4F1D09A4D700D9133B /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B396DA4E1D09A4D700D9133B /* Wireframe.swift */; };
-		B396DA651D09B3FB00D9133B /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B396DA641D09B3FB00D9133B /* UIFontExtensions.swift */; };
+		B396DA651D09B3FB00D9133B /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B396DA641D09B3FB00D9133B /* UIFontExtension.swift */; };
 		B398AF431D0A535100D26C5B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B398AF421D0A535100D26C5B /* CoreData.framework */; };
 		B39E65151D0AF2C8005937C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3637F561D086D2D002A3AFF /* Assets.xcassets */; };
-		B3DE07401D0A2D1000D6B6FF /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3637F691D08744E002A3AFF /* TwitterKit.framework */; };
-		B3DE07761D0A304A00D6B6FF /* Pods_SalyangozKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE07751D0A304900D6B6FF /* Pods_SalyangozKit.framework */; };
+		B3DE07401D0A2D1000D6B6FF /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3637F691D08744E002A3AFF /* TwitterKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B3DE07761D0A304A00D6B6FF /* Pods_SalyangozKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE07751D0A304900D6B6FF /* Pods_SalyangozKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B3DE07791D0A323C00D6B6FF /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3B4AE941D0A2834002691A8 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3DE077A1D0A323C00D6B6FF /* AlamofireObjectMapper.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3B4AE951D0A2834002691A8 /* AlamofireObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3DE077B1D0A323C00D6B6FF /* KeychainAccess.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3B4AE961D0A2834002691A8 /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3DE077C1D0A323D00D6B6FF /* ObjectMapper.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3B4AE971D0A2834002691A8 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3DE077E1D0A40E400D6B6FF /* SharePreprocessor.js in Resources */ = {isa = PBXBuildFile; fileRef = B3DE077D1D0A40E400D6B6FF /* SharePreprocessor.js */; };
-		FDBF3540AB4815504202C06B /* Pods_SalyangozKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 903D8A320BACC0CAB742E739 /* Pods_SalyangozKit.framework */; };
+		FDBF3540AB4815504202C06B /* Pods_SalyangozKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 903D8A320BACC0CAB742E739 /* Pods_SalyangozKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +123,19 @@
 		4799E34B9420B634A162B856 /* Pods-Salyangoz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Salyangoz.release.xcconfig"; path = "Pods/Target Support Files/Pods-Salyangoz/Pods-Salyangoz.release.xcconfig"; sourceTree = "<group>"; };
 		4C2AE48F649CC57CA320A663 /* Pods_Salyangoz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Salyangoz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		903D8A320BACC0CAB742E739 /* Pods_SalyangozKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SalyangozKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B320DEA61D0B83BD00CD9A59 /* SalyangozButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SalyangozButton.swift; path = CustomUI/SalyangozButton.swift; sourceTree = "<group>"; };
+		B320DEAE1D0B899600CD9A59 /* RecentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecentCell.swift; path = Cells/RecentCell.swift; sourceTree = "<group>"; };
+		B320DEB01D0B8BC700CD9A59 /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RobotoCondensed-Italic.ttf"; path = "Assets/Fonts/RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
+		B320DEB11D0B8BC700CD9A59 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RobotoCondensed-Regular.ttf"; path = "Assets/Fonts/RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		B320DEB71D0B974D00CD9A59 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginResponse.swift; path = Models/LoginResponse.swift; sourceTree = "<group>"; };
+		B320DEB91D0B99CA00CD9A59 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = Models/Post.swift; sourceTree = "<group>"; };
+		B320DEBB1D0BA53A00CD9A59 /* RecentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentView.swift; sourceTree = "<group>"; };
+		B320DEBD1D0BA78500CD9A59 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B320DEC01D0BA81300CD9A59 /* BarAppearances.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarAppearances.swift; path = Protocols/BarAppearances.swift; sourceTree = "<group>"; };
+		B320DEC21D0BAC3C00CD9A59 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		B320DEC41D0BB77D00CD9A59 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		B33636DD1D0C29D100FE3CF0 /* UserProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProtocol.swift; sourceTree = "<group>"; };
+		B33636E01D0C2DE700FE3CF0 /* FeedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedUser.swift; path = Models/FeedUser.swift; sourceTree = "<group>"; };
 		B3637F4C1D086D2D002A3AFF /* Salyangoz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salyangoz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3637F4F1D086D2D002A3AFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3637F511D086D2D002A3AFF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -124,7 +149,6 @@
 		B3637F6B1D08744E002A3AFF /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		B3637F731D08AE96002A3AFF /* Credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Credentials.plist; path = "Supporting Files/Credentials.plist"; sourceTree = "<group>"; };
 		B3637F751D08B07C002A3AFF /* NSBundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundleExtension.swift; sourceTree = "<group>"; };
-		B3637F851D0998CA002A3AFF /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B3637F871D0999A6002A3AFF /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
 		B3637F891D099B4F002A3AFF /* UIActivityIndicatorViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorViewExtension.swift; sourceTree = "<group>"; };
 		B36F37C01D0A040400A33958 /* SalyangozShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SalyangozShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,7 +160,7 @@
 		B36F37DE1D0A1FBD00A33958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B36F37E61D0A1FCB00A33958 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		B36F37E81D0A20B500A33958 /* SalyangozAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalyangozAPI.swift; sourceTree = "<group>"; };
-		B36F37EA1D0A20BE00A33958 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B36F37EA1D0A20BE00A33958 /* SessionUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionUser.swift; path = Models/SessionUser.swift; sourceTree = "<group>"; };
 		B36F37EC1D0A24A200A33958 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		B36F37ED1D0A24A200A33958 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = "Pods/../build/Debug-iphoneos/AlamofireObjectMapper/AlamofireObjectMapper.framework"; sourceTree = "<group>"; };
 		B36F37EE1D0A24A200A33958 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = "Pods/../build/Debug-iphoneos/KeychainAccess/KeychainAccess.framework"; sourceTree = "<group>"; };
@@ -150,7 +174,7 @@
 		B396DA591D09B2D100D9133B /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "Assets/Fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		B396DA5A1D09B2D100D9133B /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-MediumItalic.ttf"; path = "Assets/Fonts/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		B396DA5B1D09B2D100D9133B /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "Assets/Fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		B396DA641D09B3FB00D9133B /* UIFontExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
+		B396DA641D09B3FB00D9133B /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		B398AF421D0A535100D26C5B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B3B4AE941D0A2834002691A8 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Salyangoz-dieoqexbidxagpecdyihahzbhepy/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		B3B4AE951D0A2834002691A8 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Salyangoz-dieoqexbidxagpecdyihahzbhepy/Build/Products/Debug-iphonesimulator/AlamofireObjectMapper/AlamofireObjectMapper.framework"; sourceTree = "<group>"; };
@@ -160,6 +184,7 @@
 		B3DE07421D0A2D1000D6B6FF /* Salyangoz.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Salyangoz.xcodeproj; sourceTree = "<group>"; };
 		B3DE07751D0A304900D6B6FF /* Pods_SalyangozKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_SalyangozKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Salyangoz-dieoqexbidxagpecdyihahzbhepy/Build/Products/Debug-iphonesimulator/Pods_SalyangozKit.framework"; sourceTree = "<group>"; };
 		B3DE077D1D0A40E400D6B6FF /* SharePreprocessor.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = SharePreprocessor.js; sourceTree = "<group>"; };
+		B3FEAFC61D0DCB6400F9D92D /* TimeAgoInWords.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TimeAgoInWords.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Salyangoz-dieoqexbidxagpecdyihahzbhepy/Build/Products/Debug-iphonesimulator/TimeAgoInWords/TimeAgoInWords.framework"; sourceTree = "<group>"; };
 		B5F9011904854766F2B9ECED /* Pods-SalyangozKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalyangozKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SalyangozKit/Pods-SalyangozKit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,9 +193,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87B9D53C7A115B898B0D9B5D /* Pods_Salyangoz.framework in Frameworks */,
 				B3DE07761D0A304A00D6B6FF /* Pods_SalyangozKit.framework in Frameworks */,
 				B3DE07401D0A2D1000D6B6FF /* TwitterKit.framework in Frameworks */,
-				87B9D53C7A115B898B0D9B5D /* Pods_Salyangoz.framework in Frameworks */,
 				B3637F6F1D08744E002A3AFF /* TwitterCore.framework in Frameworks */,
 				B3637F6C1D08744E002A3AFF /* Fabric.framework in Frameworks */,
 			);
@@ -207,6 +232,49 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B320DEA51D0B839E00CD9A59 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				B320DEA61D0B83BD00CD9A59 /* SalyangozButton.swift */,
+			);
+			name = CustomUI;
+			sourceTree = "<group>";
+		};
+		B320DEAD1D0B897900CD9A59 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B320DEAE1D0B899600CD9A59 /* RecentCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		B320DEB41D0B96D300CD9A59 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B36F37EA1D0A20BE00A33958 /* SessionUser.swift */,
+				B320DEB71D0B974D00CD9A59 /* LoginResponse.swift */,
+				B320DEB91D0B99CA00CD9A59 /* Post.swift */,
+				B33636E01D0C2DE700FE3CF0 /* FeedUser.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B320DEBF1D0BA7DD00CD9A59 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B320DEC01D0BA81300CD9A59 /* BarAppearances.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		B33636DF1D0C29E500FE3CF0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B33636DD1D0C29D100FE3CF0 /* UserProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		B3637F431D086D2C002A3AFF = {
 			isa = PBXGroup;
 			children = (
@@ -233,9 +301,12 @@
 			isa = PBXGroup;
 			children = (
 				B396DA501D09B29400D9133B /* Assets */,
+				B320DEAD1D0B897900CD9A59 /* Cells */,
 				B3637F771D08B2BE002A3AFF /* Classes */,
+				B320DEA51D0B839E00CD9A59 /* CustomUI */,
 				B3637F781D08B2C9002A3AFF /* Extensions */,
 				B3637F701D087479002A3AFF /* Frameworks */,
+				B320DEBF1D0BA7DD00CD9A59 /* Protocols */,
 				B3637F721D08AA72002A3AFF /* Storyboards */,
 				B3637F711D08A3C8002A3AFF /* Supporting Files */,
 				B3637F811D0980EC002A3AFF /* Views */,
@@ -287,7 +358,9 @@
 				B3637F751D08B07C002A3AFF /* NSBundleExtension.swift */,
 				B3637F871D0999A6002A3AFF /* UIStoryboardExtension.swift */,
 				B3637F891D099B4F002A3AFF /* UIActivityIndicatorViewExtension.swift */,
-				B396DA641D09B3FB00D9133B /* UIFontExtensions.swift */,
+				B396DA641D09B3FB00D9133B /* UIFontExtension.swift */,
+				B320DEC21D0BAC3C00CD9A59 /* UIViewControllerExtension.swift */,
+				B320DEC41D0BB77D00CD9A59 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -295,8 +368,9 @@
 		B3637F811D0980EC002A3AFF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B320DEBD1D0BA78500CD9A59 /* HomeView.swift */,
 				B3637F511D086D2D002A3AFF /* LoginView.swift */,
-				B3637F851D0998CA002A3AFF /* HomeView.swift */,
+				B320DEBB1D0BA53A00CD9A59 /* RecentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -315,11 +389,12 @@
 		B36F37DB1D0A1FBD00A33958 /* SalyangozKit */ = {
 			isa = PBXGroup;
 			children = (
-				B36F37DC1D0A1FBD00A33958 /* SalyangozKit.h */,
-				B36F37DE1D0A1FBD00A33958 /* Info.plist */,
 				B36F37E61D0A1FCB00A33958 /* DataManager.swift */,
+				B36F37DE1D0A1FBD00A33958 /* Info.plist */,
+				B320DEB41D0B96D300CD9A59 /* Models */,
+				B33636DF1D0C29E500FE3CF0 /* Protocols */,
 				B36F37E81D0A20B500A33958 /* SalyangozAPI.swift */,
-				B36F37EA1D0A20BE00A33958 /* User.swift */,
+				B36F37DC1D0A1FBD00A33958 /* SalyangozKit.h */,
 			);
 			path = SalyangozKit;
 			sourceTree = "<group>";
@@ -336,6 +411,8 @@
 		B396DA511D09B29A00D9133B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				B320DEB01D0B8BC700CD9A59 /* RobotoCondensed-Italic.ttf */,
+				B320DEB11D0B8BC700CD9A59 /* RobotoCondensed-Regular.ttf */,
 				B396DA561D09B2D100D9133B /* Roboto-Italic.ttf */,
 				B396DA571D09B2D100D9133B /* Roboto-Light.ttf */,
 				B396DA581D09B2D100D9133B /* Roboto-LightItalic.ttf */,
@@ -348,12 +425,15 @@
 		};
 		B3DE07431D0A2D1000D6B6FF /* Products */ = {
 			isa = PBXGroup;
+			children = (
+			);
 			name = Products;
 			sourceTree = "<group>";
 		};
 		D5726AED952D7DCD52359BB6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3FEAFC61D0DCB6400F9D92D /* TimeAgoInWords.framework */,
 				B398AF421D0A535100D26C5B /* CoreData.framework */,
 				B3DE07751D0A304900D6B6FF /* Pods_SalyangozKit.framework */,
 				B3DE07421D0A2D1000D6B6FF /* Salyangoz.xcodeproj */,
@@ -392,15 +472,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3637F5E1D086D2D002A3AFF /* Build configuration list for PBXNativeTarget "Salyangoz" */;
 			buildPhases = (
-				8924D207B53F3FFB63F56906 /* 📦 Check Pods Manifest.lock */,
+				10DE59C6457462886005AF3B /* [CP] Check Pods Manifest.lock */,
+				8924D207B53F3FFB63F56906 /* [CP] Check Pods Manifest.lock */,
 				B3637F481D086D2D002A3AFF /* Sources */,
 				B3637F491D086D2D002A3AFF /* Frameworks */,
 				B3637F4A1D086D2D002A3AFF /* Resources */,
-				7F05F815B6B46AF0C8CA7928 /* 📦 Embed Pods Frameworks */,
-				645A7B58642FB50F229B4DE9 /* 📦 Copy Pods Resources */,
+				7F05F815B6B46AF0C8CA7928 /* [CP] Embed Pods Frameworks */,
+				645A7B58642FB50F229B4DE9 /* [CP] Copy Pods Resources */,
 				B3637F671D087423002A3AFF /* ShellScript */,
 				B36F37B41D09FFB500A33958 /* Embed Frameworks */,
 				B36F37CE1D0A040400A33958 /* Embed App Extensions */,
+				68E4C8DD6AC37033A5F96CD3 /* 📦 Embed Pods Frameworks */,
+				49235E415A65B245DE40C626 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -434,13 +517,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B36F37E31D0A1FBD00A33958 /* Build configuration list for PBXNativeTarget "SalyangozKit" */;
 			buildPhases = (
-				3CF445B717282D877D6C12A5 /* 📦 Check Pods Manifest.lock */,
+				D6FE95C9C71003A3B7A814A1 /* [CP] Check Pods Manifest.lock */,
+				3CF445B717282D877D6C12A5 /* [CP] Check Pods Manifest.lock */,
 				B36F37D51D0A1FBD00A33958 /* Sources */,
 				B36F37D61D0A1FBD00A33958 /* Frameworks */,
 				B36F37D71D0A1FBD00A33958 /* Headers */,
 				B36F37D81D0A1FBD00A33958 /* Resources */,
-				BE22F37E10F78A0359E8ECC2 /* 📦 Copy Pods Resources */,
+				BE22F37E10F78A0359E8ECC2 /* [CP] Copy Pods Resources */,
 				B3DE07781D0A320C00D6B6FF /* CopyFiles */,
+				9BE693842A6F5401D049B87A /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -463,15 +548,12 @@
 				TargetAttributes = {
 					B3637F4B1D086D2D002A3AFF = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 9JJNZLTAH9;
 					};
 					B36F37BF1D0A040400A33958 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 9JJNZLTAH9;
 					};
 					B36F37D91D0A1FBD00A33958 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 9JJNZLTAH9;
 					};
 				};
 			};
@@ -506,6 +588,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B320DEB21D0B8BD800CD9A59 /* RobotoCondensed-Italic.ttf in Resources */,
+				B320DEB31D0B8BD800CD9A59 /* RobotoCondensed-Regular.ttf in Resources */,
 				B36F379D1D09BD9300A33958 /* Roboto-Italic.ttf in Resources */,
 				B36F379E1D09BD9300A33958 /* Roboto-Light.ttf in Resources */,
 				B36F379F1D09BD9300A33958 /* Roboto-LightItalic.ttf in Resources */,
@@ -540,14 +624,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3CF445B717282D877D6C12A5 /* 📦 Check Pods Manifest.lock */ = {
+		10DE59C6457462886005AF3B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,7 +639,22 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		645A7B58642FB50F229B4DE9 /* 📦 Copy Pods Resources */ = {
+		3CF445B717282D877D6C12A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		49235E415A65B245DE40C626 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -570,7 +669,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Salyangoz/Pods-Salyangoz-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7F05F815B6B46AF0C8CA7928 /* 📦 Embed Pods Frameworks */ = {
+		645A7B58642FB50F229B4DE9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Salyangoz/Pods-Salyangoz-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68E4C8DD6AC37033A5F96CD3 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -585,19 +699,49 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Salyangoz/Pods-Salyangoz-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8924D207B53F3FFB63F56906 /* 📦 Check Pods Manifest.lock */ = {
+		7F05F815B6B46AF0C8CA7928 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Salyangoz/Pods-Salyangoz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8924D207B53F3FFB63F56906 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9BE693842A6F5401D049B87A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SalyangozKit/Pods-SalyangozKit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B3637F671D087423002A3AFF /* ShellScript */ = {
@@ -613,19 +757,34 @@
 			shellPath = /bin/sh;
 			shellScript = "./Salyangoz/Frameworks/Fabric.framework/run 60450b268aa756a2d90834f10f9d15f5ec3322cc 2d300526c5cb9746f439ea97d65de061fc1bb71ec145960930318313d5a1e75b";
 		};
-		BE22F37E10F78A0359E8ECC2 /* 📦 Copy Pods Resources */ = {
+		BE22F37E10F78A0359E8ECC2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SalyangozKit/Pods-SalyangozKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6FE95C9C71003A3B7A814A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -636,10 +795,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B396DA4F1D09A4D700D9133B /* Wireframe.swift in Sources */,
+				B320DEC51D0BB77D00CD9A59 /* UIColorExtension.swift in Sources */,
 				B3637F761D08B07C002A3AFF /* NSBundleExtension.swift in Sources */,
-				B3637F861D0998CA002A3AFF /* HomeView.swift in Sources */,
+				B320DEBC1D0BA53A00CD9A59 /* RecentView.swift in Sources */,
+				B320DEAF1D0B899600CD9A59 /* RecentCell.swift in Sources */,
 				B3637F881D0999A6002A3AFF /* UIStoryboardExtension.swift in Sources */,
-				B396DA651D09B3FB00D9133B /* UIFontExtensions.swift in Sources */,
+				B320DEC11D0BA81300CD9A59 /* BarAppearances.swift in Sources */,
+				B320DEBE1D0BA78500CD9A59 /* HomeView.swift in Sources */,
+				B320DEC31D0BAC3C00CD9A59 /* UIViewControllerExtension.swift in Sources */,
+				B320DEA71D0B83BD00CD9A59 /* SalyangozButton.swift in Sources */,
+				B396DA651D09B3FB00D9133B /* UIFontExtension.swift in Sources */,
 				B3637F521D086D2D002A3AFF /* LoginView.swift in Sources */,
 				B3637F501D086D2D002A3AFF /* AppDelegate.swift in Sources */,
 				B3637F8A1D099B4F002A3AFF /* UIActivityIndicatorViewExtension.swift in Sources */,
@@ -660,7 +825,11 @@
 			files = (
 				B36F37E71D0A1FCB00A33958 /* DataManager.swift in Sources */,
 				B36F37E91D0A20B500A33958 /* SalyangozAPI.swift in Sources */,
-				B36F37EB1D0A20BE00A33958 /* User.swift in Sources */,
+				B33636DE1D0C29D100FE3CF0 /* UserProtocol.swift in Sources */,
+				B33636E11D0C2DE700FE3CF0 /* FeedUser.swift in Sources */,
+				B320DEB81D0B974D00CD9A59 /* LoginResponse.swift in Sources */,
+				B320DEBA1D0B99CA00CD9A59 /* Post.swift in Sources */,
+				B36F37EB1D0A20BE00A33958 /* SessionUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -800,7 +969,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Salyangoz/Frameworks/";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Salyangoz/Frameworks/**",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "Salyangoz/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -818,7 +990,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Salyangoz/Frameworks/";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Salyangoz/Frameworks/**",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "Salyangoz/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -874,9 +1049,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/**",
 					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TimeAgoInWords\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/ObjectMapper\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/KeychainAccess\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/AlamofireObjectMapper\"",
@@ -885,7 +1063,7 @@
 				INFOPLIST_FILE = SalyangozKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.towerlabs.SalyangozKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -909,18 +1087,21 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/**",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/ObjectMapper\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/KeychainAccess\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/AlamofireObjectMapper\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TimeAgoInWords\"",
 				);
 				INFOPLIST_FILE = SalyangozKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.towerlabs.SalyangozKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
