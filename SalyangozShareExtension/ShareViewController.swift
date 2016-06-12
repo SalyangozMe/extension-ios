@@ -53,27 +53,31 @@ class ShareViewController: UIViewController {
     
     func sharePage(url: String, title: String){
         if DataManager.sharedManager.isLoggedIn(){
-            SalyangozAPI.sharedAPI.shareToSalyangoz(url, title: title) {  [unowned self] (response, error) in
-                if let _ = response{
-                    self.messageLabel.text = NSLocalizedString("Shared!", comment: "")
+            SalyangozAPI.sharedAPI.shareToSalyangoz(url, title: title, completion: { [unowned self] (success: Bool) in
+                if success{
+                    self.setMessageLabelText(NSLocalizedString("Shared!", comment: ""))
                 }else{
-                    self.messageLabel.text = NSLocalizedString("Error!", comment: "")
+                    self.setMessageLabelText(NSLocalizedString("Error!", comment: ""))
                 }
                 self.complete()
-            }
+            })
         }else{
-            self.messageLabel.text = NSLocalizedString("Please login first!", comment: "")
+            self.setMessageLabelText(NSLocalizedString("Please login first!", comment: ""))
             self.complete()
         }
+    }
+    
+    func setMessageLabelText(message:String){
+        dispatch_async(dispatch_get_main_queue(), {
+            self.messageLabel.text = message
+        })
     }
     
     func complete(){
         let delayInSeconds = 1.5
         let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)))
         dispatch_after(delay, dispatch_get_main_queue()) {
-            dispatch_async(dispatch_get_main_queue(), {
-                self.extensionContext?.completeRequestReturningItems(nil, completionHandler: nil)
-            })
+            self.extensionContext?.completeRequestReturningItems(nil, completionHandler: nil)
         }
     }
 
