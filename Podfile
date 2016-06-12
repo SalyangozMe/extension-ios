@@ -1,17 +1,13 @@
 platform :ios, '9.0'
 use_frameworks!
 
-def shared_pods
-    pod 'Alamofire'
-    pod 'AlamofireObjectMapper', '~> 3.0'
-end
-
 target 'Salyangoz' do
-
+    pod 'AlamofireImage', '~> 2.0'
+    pod 'TimeAgoInWords'
 end
 
 target 'SalyangozKit' do
-    shared_pods
-    pod 'KeychainAccess', 
-         :git => 'https://github.com/kishikawakatsumi/KeychainAccess.git'
+    pod 'Alamofire'
+    pod 'AlamofireObjectMapper', '~> 3.0'
+    pod 'KeychainAccess', :git => 'https://github.com/kishikawakatsumi/KeychainAccess.git'
 end
