@@ -34,7 +34,7 @@ enum Router: URLRequestConvertible{
         case .Login(let authToken, let authTokenSecret):
             return ("/login", ["token":authToken, "secret":authTokenSecret])
         case .Recent:
-            return ("/recent.json", nil)
+            return ("/recent", nil)
         case .Home(let userId, let userToken):
             return ("/posts/home", ["id":userId, "token":userToken])
         case .ShareToSalyangoz(let userId, let token, let url, let title):
