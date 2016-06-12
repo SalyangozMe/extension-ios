@@ -8,10 +8,12 @@
 
 import Foundation
 import UIKit
+import SalyangozKit
 
 class Wireframe{
     static let sharedWireframe = Wireframe()
     let homeNavigationControllerIdentifier = "HomeNavigationController"
+    let mainTabBarControllerIdentifier = "MainTabBarController"
     
     var keyWindow: UIWindow?{
         if let app = UIApplication.sharedApplication().delegate as? AppDelegate, let window = app.window{
@@ -21,13 +23,53 @@ class Wireframe{
         }
     }
     
+    var loginView: LoginView?{
+        if let loginView = UIStoryboard.mainStoryboard().instantiateViewControllerWithIdentifier(String(LoginView)) as? LoginView{
+            return loginView
+        }
+        return nil
+    }
+    
     init(){
         
     }
     
+    func showProperView(){
+        if !DataManager.sharedManager.isLoggedIn(){
+            if DataManager.sharedManager.isTutorialSeen() {
+                self.showLoginViewAsRootView()
+            }else{
+                DataManager.sharedManager.setTutorialSeenStatus(true)
+                self.showTutorialAsRootView()
+            }
+        }else{
+            showTabBarWithLogin()
+        }
+    }
+    
     func showLoginViewAsRootView(){
-        let loginView = UIStoryboard.mainStoryboard().instantiateViewControllerWithIdentifier(String(LoginView))
         self.keyWindow?.rootViewController = loginView
+    }
+    
+    func showTabBarWithoutLogin(){
+        if let mainTabBarController: UITabBarController = UIStoryboard.mainStoryboard().instantiateViewControllerWithIdentifier(mainTabBarControllerIdentifier) as? UITabBarController{
+            self.keyWindow?.rootViewController = mainTabBarController
+        }
+    }
+    
+    func showTabBarWithLogin(){
+        if let mainTabBarController: UITabBarController = UIStoryboard.mainStoryboard().instantiateViewControllerWithIdentifier(mainTabBarControllerIdentifier) as? UITabBarController{
+            if let homeNavigationController = UIStoryboard.mainStoryboard().instantiateViewControllerWithIdentifier(homeNavigationControllerIdentifier) as? UINavigationController{
+                
+                print(mainTabBarController.viewControllers)
+                mainTabBarController.viewControllers?.insert(homeNavigationController, atIndex: 0)
+                self.keyWindow?.rootViewController = mainTabBarController
+            }
+        }
+    }
+    
+    func showTutorialAsRootView(){
+        
     }
     
     func showTabBarAsRootView(){
