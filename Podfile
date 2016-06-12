@@ -4,6 +4,9 @@ use_frameworks!
 target 'Salyangoz' do
     pod 'AlamofireImage', '~> 2.0'
     pod 'TimeAgoInWords'
+    pod 'Fabric'
+    pod 'TwitterKit'
+    pod 'TwitterCore'
 end
 
 target 'SalyangozKit' do
