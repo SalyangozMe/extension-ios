@@ -24,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Fabric.with([Twitter.self()])
         }
         
-        if !DataManager.sharedManager.isLoggedIn(){
-            Wireframe.sharedWireframe.showLoginViewAsRootView()
-        }
+        let tabBarItemAttributes = [NSFontAttributeName:UIFont.applicationTabBarItemTitleFont()]
+        UITabBarItem.appearance().setTitleTextAttributes(tabBarItemAttributes, forState: .Normal)
+        Wireframe.sharedWireframe.showProperView()
         
         return true
     }
