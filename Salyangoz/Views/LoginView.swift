@@ -14,6 +14,11 @@ class LoginView: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loginWithTwitterButton: TWTRLogInButton!
+    @IBOutlet weak var continueAsGuestButton: UIButton!
+    
+    @IBAction func continueAsGuest(sender: AnyObject) {
+        Wireframe.sharedWireframe.showTabBarWithoutLogin()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +40,13 @@ class LoginView: UIViewController {
     
     func makeLoginToSalyangozService(authToken: String, authTokenSecret: String){
         self.activityIndicator.show()
-        SalyangozAPI.sharedAPI.login(authToken, authTokenSecret: authTokenSecret, completion: { (response, error) in
+        SalyangozAPI.sharedAPI.login(authToken, authTokenSecret: authTokenSecret, completion: { (success) in
             self.activityIndicator.hide()
-            Wireframe.sharedWireframe.showTabBarAsRootView()
+            if success{
+                Wireframe.sharedWireframe.showTabBarWithLogin()
+            }else{
+                print("Can't log in.")
+            }
         })
     }
 }
