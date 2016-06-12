@@ -18,6 +18,9 @@ public enum SalyangozFont: String{
     
     case SalyangozFontMedium = "Roboto-Medium"
     case SalyangozFontMediumItalic = "Roboto-MediumItalic"
+    
+    case SalyangozFontCondensedRegular = "RobotoCondensed-Regular"
+    case SalyangozFontCondensedItalic = "RobotoCondensed-Italic"
 }
 
 public extension UIFont{
@@ -27,5 +30,13 @@ public extension UIFont{
         }else{
             return UIFont.systemFontOfSize(size)
         }
+    }
+    
+    public static func applicationNavigationHeadingFont() -> UIFont{
+        return UIFont.applicationFont(SalyangozFont.SalyangozFontMedium, size: 18)
+    }
+    
+    public static func applicationTabBarItemTitleFont() -> UIFont{
+        return UIFont.applicationFont(SalyangozFont.SalyangozFontLight, size: 11)
     }
 }
