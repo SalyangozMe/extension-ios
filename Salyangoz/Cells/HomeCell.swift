@@ -1,5 +1,5 @@
 //
-//  FeedItem.swift
+//  HomeCell.swift
 //  Salyangoz
 //
 //  Created by Muhammed Said Özcan on 12/06/16.
