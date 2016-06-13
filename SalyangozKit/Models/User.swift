@@ -60,5 +60,6 @@ public class User: NSObject, NSCoding, Mappable{
         token <- map["token"]
         username <- map["user_name"]
         profileImageURL <- (map["profile_image"], profileImageTransform)
+        posts <- map["posts"]
     }
 }
