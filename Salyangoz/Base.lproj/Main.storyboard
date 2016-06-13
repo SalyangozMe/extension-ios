@@ -4,12 +4,19 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </mutableArray>
         <mutableArray key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
         </mutableArray>
         <mutableArray key="RobotoCondensed-Regular.ttf">
+            <string>RobotoCondensed-Regular</string>
+            <string>RobotoCondensed-Regular</string>
+            <string>RobotoCondensed-Regular</string>
             <string>RobotoCondensed-Regular</string>
         </mutableArray>
     </customFonts>
@@ -34,8 +41,8 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salyangoz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxh-hG-tNm">
-                                <rect key="frame" x="253" y="284" width="95" height="26"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                <rect key="frame" x="252" y="284" width="96" height="28"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="21"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -250,19 +257,75 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MC0-UG-5bz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="30" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MC0-UG-5bz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <edgeInsets key="layoutMargins" top="10" left="8" bottom="8" right="8"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZVk-qa-4wc">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" id="ZVk-qa-4wc" customClass="HomeCell" customModule="Salyangoz" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="30" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZVk-qa-4wc" id="9Db-Jx-dMV">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L90-iL-hyv">
+                                                    <rect key="frame" x="61" y="10" width="529" height="19"/>
+                                                    <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="14"/>
+                                                    <color key="textColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCY-LT-sEm">
+                                                    <rect key="frame" x="10" y="12" width="36" height="36"/>
+                                                    <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="36" id="JxW-xn-HgU"/>
+                                                        <constraint firstAttribute="height" constant="36" id="bUz-u4-z7U"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="14"/>
+                                                    <state key="normal" title="100">
+                                                        <color key="titleColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="views" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QI5-7k-lCS">
+                                                    <rect key="frame" x="17" y="38" width="22" height="14"/>
+                                                    <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="10"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="url · updated_at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="PRT-lp-vf7">
+                                                    <rect key="frame" x="61" y="29" width="529" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GCY-LT-sEm" firstAttribute="centerY" secondItem="9Db-Jx-dMV" secondAttribute="centerY" id="8Zb-u8-QXV"/>
+                                                <constraint firstAttribute="trailing" secondItem="L90-iL-hyv" secondAttribute="trailing" constant="10" id="Cou-lG-Cf5"/>
+                                                <constraint firstAttribute="trailing" secondItem="PRT-lp-vf7" secondAttribute="trailing" constant="10" id="M5Q-2e-5lP"/>
+                                                <constraint firstItem="PRT-lp-vf7" firstAttribute="leading" secondItem="GCY-LT-sEm" secondAttribute="trailing" constant="15" id="R6G-Lr-vIW"/>
+                                                <constraint firstItem="L90-iL-hyv" firstAttribute="leading" secondItem="GCY-LT-sEm" secondAttribute="trailing" constant="15" id="Sj2-uO-cgq"/>
+                                                <constraint firstItem="QI5-7k-lCS" firstAttribute="top" secondItem="GCY-LT-sEm" secondAttribute="bottom" constant="-10" id="XWz-sk-YZ1"/>
+                                                <constraint firstItem="QI5-7k-lCS" firstAttribute="centerX" secondItem="GCY-LT-sEm" secondAttribute="centerX" id="iRi-Tv-QM1"/>
+                                                <constraint firstItem="L90-iL-hyv" firstAttribute="top" secondItem="9Db-Jx-dMV" secondAttribute="top" constant="10" id="lXf-Yk-amA"/>
+                                                <constraint firstItem="GCY-LT-sEm" firstAttribute="leading" secondItem="9Db-Jx-dMV" secondAttribute="leading" constant="10" id="o4J-he-idW"/>
+                                                <constraint firstItem="PRT-lp-vf7" firstAttribute="top" secondItem="L90-iL-hyv" secondAttribute="bottom" id="sig-nK-Ofr"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellDetailLabel" destination="PRT-lp-vf7" id="a6h-Kd-D09"/>
+                                            <outlet property="titleLabel" destination="L90-iL-hyv" id="hSQ-rG-CYw"/>
+                                            <outlet property="viewCount" destination="GCY-LT-sEm" id="V0n-VE-aFa"/>
+                                            <outlet property="viewsLabel" destination="QI5-7k-lCS" id="5Uq-Ve-znh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="mkI-YX-enK" id="u2Z-0I-4Ji"/>
+                                    <outlet property="delegate" destination="mkI-YX-enK" id="Ecb-l9-FXs"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -274,6 +337,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Y54-1e-igO"/>
+                    <connections>
+                        <outlet property="tableView" destination="MC0-UG-5bz" id="6ul-b3-Lqo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kqY-Qu-XKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
