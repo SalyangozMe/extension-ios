@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import TwitterKit
 import SalyangozKit
+import SafariServices
 
 class RecentView: UIViewController, BarAppearances{
     
@@ -66,6 +67,12 @@ extension RecentView: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let feed = self.feed{
+            let selectedPost = feed[indexPath.row]
+            if let postURL = selectedPost.url{
+                Wireframe.sharedWireframe.openURLInViewController(postURL, viewController: self)
+            }
+        }
         tableView .deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

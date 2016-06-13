@@ -1,4 +1,4 @@
-//
+
 //  Wireframe.swift
 //  Salyangoz
 //
@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SalyangozKit
+import SafariServices
 
 class Wireframe{
     static let sharedWireframe = Wireframe()
@@ -39,7 +40,7 @@ class Wireframe{
             if DataManager.sharedManager.isTutorialSeen() {
                 self.showLoginViewAsRootView()
             }else{
-                DataManager.sharedManager.setTutorialSeenStatus(true)
+                DataManager.sharedManager.setTutorialSeen(true)
                 self.showTutorialAsRootView()
             }
         }else{
@@ -60,8 +61,6 @@ class Wireframe{
     func showTabBarWithLogin(){
         if let mainTabBarController: UITabBarController = UIStoryboard.mainStoryboard().instantiateViewControllerWithIdentifier(mainTabBarControllerIdentifier) as? UITabBarController{
             if let homeNavigationController = UIStoryboard.mainStoryboard().instantiateViewControllerWithIdentifier(homeNavigationControllerIdentifier) as? UINavigationController{
-                
-                print(mainTabBarController.viewControllers)
                 mainTabBarController.viewControllers?.insert(homeNavigationController, atIndex: 0)
                 self.keyWindow?.rootViewController = mainTabBarController
             }
@@ -76,4 +75,10 @@ class Wireframe{
         let navigationController: UINavigationController = UIStoryboard.mainStoryboard().instantiateViewControllerWithIdentifier(homeNavigationControllerIdentifier) as! UINavigationController
         self.keyWindow?.rootViewController = navigationController
     }
+    
+    func openURLInViewController(url: NSURL, viewController: UIViewController){
+        let safariVC = SFSafariViewController(URL: url)
+        viewController.presentViewController(safariVC, animated: true, completion: nil)
+    }
+    
 }
