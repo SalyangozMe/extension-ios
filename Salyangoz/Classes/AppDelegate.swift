@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var credentials = NSBundle.contentsOfFile("Credentials.plist")
         if let consumerKey = credentials["consumerKey"] as? String, consumerSecret = credentials["consumerSecret"] as? String{
             Twitter.sharedInstance().startWithConsumerKey(consumerKey, consumerSecret: consumerSecret)
-            Fabric.with([Twitter.self()])
         }
         
         let tabBarItemAttributes = [NSFontAttributeName:UIFont.applicationTabBarItemTitleFont()]
