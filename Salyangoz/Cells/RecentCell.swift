@@ -32,8 +32,8 @@ class RecentCell: UITableViewCell{
                 cellDetailLabel.text = cellDetailLabelText
             }
         }
-        if let user: FeedUser = cellItem.feedUser{
-            if let profileImageURL = user.getProfileImageURL(){
+        if let user: User = cellItem.owner{
+            if let profileImageURL = user.profileImageURL{
                 userImageView.af_setImageWithURL(profileImageURL)
             }
         }

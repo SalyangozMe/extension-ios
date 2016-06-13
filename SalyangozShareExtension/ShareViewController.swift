@@ -38,7 +38,7 @@ class ShareViewController: UIViewController {
                         guard let url = preprocessingResults["URL"] as? String else { return }
                         guard let title = preprocessingResults["title"] as? String else { return }
                         
-                        self.sharePage(url, title: title)
+                        self.sharePage(title, url: url)
                     }
                     
                     attachment.loadItemForTypeIdentifier(kUTTypePropertyList as String,
@@ -51,9 +51,10 @@ class ShareViewController: UIViewController {
         
     }
     
-    func sharePage(url: String, title: String){
+    func sharePage(title: String, url: String){
         if DataManager.sharedManager.isLoggedIn(){
-            SalyangozAPI.sharedAPI.shareToSalyangoz(url, title: title, completion: { [unowned self] (success: Bool) in
+            let post = Post(title: title, url: NSURL(string: url)!)
+            SalyangozAPI.sharedAPI.sharePost(post, completion: { [unowned self] (success: Bool) in
                 if success{
                     self.setMessageLabelText(NSLocalizedString("Shared!", comment: ""))
                 }else{

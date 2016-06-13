@@ -19,7 +19,7 @@ public class DataManager{
     
     // MARK: Session Methods
     
-    public func createSession(user: SessionUser){
+    public func createSession(user: User){
         let loginResponseData = NSKeyedArchiver.archivedDataWithRootObject(user)
         do {
             try sharedKeychain.set(loginResponseData, key: kUserSessionKey)
@@ -48,11 +48,11 @@ public class DataManager{
         }
     }
     
-    public func getSession() -> SessionUser?{
+    public func getSession() -> User?{
         do {
             if let userData: NSData = try sharedKeychain.getData(kUserSessionKey){
-                NSKeyedUnarchiver.setClass(SessionUser.self, forClassName: "SalyangozKit.SessionUser")
-                if let user = NSKeyedUnarchiver.unarchiveObjectWithData(userData) as? SessionUser{
+                NSKeyedUnarchiver.setClass(User.self, forClassName: "SalyangozKit.User")
+                if let user = NSKeyedUnarchiver.unarchiveObjectWithData(userData) as? User{
                     print(user)
                     return user
                 }
@@ -66,14 +66,16 @@ public class DataManager{
     
     // MARK: Tutorial Methods
     
-    public func setTutorialSeenStatus(status:Bool){
+    public func setTutorialSeen(status:Bool){
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setBool(status, forKey: kTutorialSeenKey)
+        defaults.setObject(NSNumber(bool: status), forKey: kTutorialSeenKey)
+        defaults.synchronize()
     }
     
     public func isTutorialSeen() -> Bool{
         guard let isSeenObject = NSUserDefaults.standardUserDefaults().objectForKey(kTutorialSeenKey) else { return false }
-        if let _ = isSeenObject.boolValue{
+        let isSeen = isSeenObject.boolValue
+        if (isSeen != nil) && (isSeen.boolValue){
             return true
         }
         return false

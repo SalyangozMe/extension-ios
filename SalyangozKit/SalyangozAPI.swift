@@ -15,7 +15,7 @@ enum Router: URLRequestConvertible{
     static let baseServiceURL = NSURL(string: "https://salyangoz.me/api/v1/mobile")!
     
     case Recent
-    case Home(Int, String)
+    case Home(String)
     case Login(String, String)
     case ShareToSalyangoz(Int, String, String, String)
     
@@ -35,8 +35,8 @@ enum Router: URLRequestConvertible{
             return ("/login", ["token":authToken, "secret":authTokenSecret])
         case .Recent:
             return ("/recent", nil)
-        case .Home(let userId, let userToken):
-            return ("/posts/home", ["id":userId, "token":userToken])
+        case .Home(let userToken):
+            return ("/posts/home", ["token":userToken])
         case .ShareToSalyangoz(let userId, let token, let url, let title):
             return ("/posts", ["id":userId, "token": "\(token)", "url":"\(url)", "title":"\(title)"])
         }
@@ -67,11 +67,10 @@ public class SalyangozAPI{
     public static let sharedAPI = SalyangozAPI()
     
     public func login(authToken:String, authTokenSecret: String, completion:(success: Bool) -> Void){
-        Alamofire.request(Router.Login(authToken, authTokenSecret)).responseObject { (response:Response<LoginResponse, NSError>) in
+        Alamofire.request(Router.Login(authToken, authTokenSecret)).responseObject { (response:Response<User, NSError>) in
             switch response.result{
             case .Success:
-                if let loginResponse = response.result.value{
-                    let user = SessionUser(userId: loginResponse.userId, token: loginResponse.token)
+                if let user: User = response.result.value{
                     DataManager.sharedManager.createSession(user)
                     dispatch_async(dispatch_get_main_queue(), {
                         completion(success: true)
@@ -86,13 +85,15 @@ public class SalyangozAPI{
         }
     }
     
-    public func shareToSalyangoz(url:String, title:String, completion:(success: Bool)->Void){
-        guard let session = DataManager.sharedManager.getSession() else { return }
-        let userId = session.userId
-        let token  = session.token
+    public func sharePost(post: Post, completion:(success: Bool)->Void){
+        guard let session: User = DataManager.sharedManager.getSession() else { return }
+        guard let userId = session.userId else { return }
+        guard let token  = session.token else { return }
+        guard let url = post.url else { return }
+        guard let title = post.title else { return }
         
-        Alamofire.request(Router.ShareToSalyangoz(userId, token, url, title)).responseJSON(completionHandler: { (response: Response<AnyObject, NSError>) in
-            dispatch_async(dispatch_get_main_queue(), { 
+        Alamofire.request(Router.ShareToSalyangoz(userId, token, url.absoluteString, title)).responseJSON(completionHandler: { (response: Response<AnyObject, NSError>) in
+            dispatch_async(dispatch_get_main_queue(), {
                 switch response.result{
                 case .Success:
                     completion(success:true)
@@ -123,6 +124,13 @@ public class SalyangozAPI{
                     completion(feed: nil, error: error)
                 })
             }
+        }
+    }
+    
+    public func getHomeFeed(completion:(feed:[User]?, error:NSError?)->Void){
+        if let sessionUser = DataManager.sharedManager.getSession(){
+            let token = sessionUser.token
+            
         }
     }
 }
