@@ -53,7 +53,6 @@ public class DataManager{
             if let userData: NSData = try sharedKeychain.getData(kUserSessionKey){
                 NSKeyedUnarchiver.setClass(User.self, forClassName: "SalyangozKit.User")
                 if let user = NSKeyedUnarchiver.unarchiveObjectWithData(userData) as? User{
-                    print(user)
                     return user
                 }
             }
