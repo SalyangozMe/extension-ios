@@ -47,7 +47,7 @@ enum Router: URLRequestConvertible{
         case .Recent:
             return .GET
         case .Home:
-            return .GET
+            return .POST
         case .Login:
             return .POST
         case .ShareToSalyangoz:
@@ -65,6 +65,29 @@ enum Router: URLRequestConvertible{
 
 public class SalyangozAPI{
     public static let sharedAPI = SalyangozAPI()
+    
+    func feedsCompletionHandler<T>(response: Alamofire.Response<[T], NSError>, completion:(feed:[T]?, error:NSError?)->Void){
+        switch response.result{
+        case .Success:
+            if let feed = response.result.value{
+                print(feed)
+                dispatch_async(dispatch_get_main_queue(), {
+                    completion(feed: feed, error: nil)
+                })
+            }else{
+                dispatch_async(dispatch_get_main_queue(), {
+                    completion(feed: nil, error: nil)
+                })
+            }
+        case .Failure(let error):
+            print(error.localizedDescription)
+            dispatch_async(dispatch_get_main_queue(), {
+                completion(feed: nil, error: error)
+            })
+        }
+    }
+    
+    //MARK: Endpoints
     
     public func login(authToken:String, authTokenSecret: String, completion:(success: Bool) -> Void){
         Alamofire.request(Router.Login(authToken, authTokenSecret)).responseObject { (response:Response<User, NSError>) in
@@ -106,31 +129,16 @@ public class SalyangozAPI{
     
     public func getRecentFeed(completion:(feed:[Post]?, error:NSError?)->Void){
         Alamofire.request(Router.Recent).responseArray(keyPath:"posts"){ (response: Response<[Post], NSError>) in
-            
-            switch response.result{
-            case .Success:
-                if let feed = response.result.value{
-                    dispatch_async(dispatch_get_main_queue(), {
-                        completion(feed: feed, error: nil)
-                    })
-                }else{
-                    dispatch_async(dispatch_get_main_queue(), {
-                        completion(feed: nil, error: nil)
-                    })
-                }
-            case .Failure(let error):
-                print(error.localizedDescription)
-                dispatch_async(dispatch_get_main_queue(), {
-                    completion(feed: nil, error: error)
-                })
-            }
+            self.feedsCompletionHandler(response, completion: completion)
         }
     }
     
     public func getHomeFeed(completion:(feed:[User]?, error:NSError?)->Void){
-        if let sessionUser = DataManager.sharedManager.getSession(){
-            let token = sessionUser.token
-            
-        }
+        guard let sessionUser = DataManager.sharedManager.getSession() else { return }
+        guard let token = sessionUser.token else { return }
+        
+        Alamofire.request(Router.Home(token)).responseArray(completionHandler: { (response:Response<[User], NSError>) in
+            self.feedsCompletionHandler(response, completion: completion)
+        })
     }
 }
