@@ -32,7 +32,7 @@ class LoginView: UIViewController {
             if let unwrappedSession = session {
                 self.makeLoginToSalyangozService(unwrappedSession.authToken, authTokenSecret: unwrappedSession.authTokenSecret)
             } else {
-                NSLog("Login error: %@", error!.localizedDescription);
+                print(error)
             }
             
         }

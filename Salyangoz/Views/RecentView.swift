@@ -12,7 +12,18 @@ import TwitterKit
 import SalyangozKit
 import SafariServices
 
-class RecentView: UIViewController, BarAppearances{
+class RecentView: UIViewController, BarAppearances, ListRefreshable{
+    var loginSelector: Selector?{
+        get{
+            return #selector(RecentView.login)
+        }
+    }
+    
+    var logoutSelector: Selector?{
+        get{
+            return #selector(RecentView.logout)
+        }
+    }
     
     var feed: [Post]?
     @IBOutlet weak var tableView: UITableView!
@@ -21,11 +32,16 @@ class RecentView: UIViewController, BarAppearances{
         super.viewDidLoad()
         self.title = "Recent"
         setBarAppearances()
-        getRecentItems()
+        getData(nil)
+        initializeRefresher()
+        showProperBarButton(#selector(RecentView.login), logoutSelector: #selector(RecentView.logout))
     }
     
-    func getRecentItems(){
+    func getData(completion: (() -> Void)?) {
         SalyangozAPI.sharedAPI.getRecentFeed { (feed, error) in
+            if let completion = completion{
+                completion()
+            }
             if feed != nil{
                 self.feed = feed
                 self.tableView.reloadData()
@@ -35,11 +51,7 @@ class RecentView: UIViewController, BarAppearances{
         }
     }
     
-    func logout(){
-        if let session = Twitter.sharedInstance().sessionStore.session(){
-            Twitter.sharedInstance().sessionStore.logOutUserID(session.userID)
-        }
-        DataManager.sharedManager.removeSession()
+    func login(){
         Wireframe.sharedWireframe.showLoginViewAsRootView()
     }
 }

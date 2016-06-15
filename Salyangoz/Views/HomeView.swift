@@ -9,8 +9,9 @@
 import UIKit
 import Foundation
 import SalyangozKit
+import PullToRefresh
 
-class HomeView: UIViewController, BarAppearances{
+class HomeView: UIViewController, BarAppearances, ListRefreshable{
     
     var feed: [User]?
     @IBOutlet weak var tableView: UITableView!
@@ -19,13 +20,18 @@ class HomeView: UIViewController, BarAppearances{
         super.viewDidLoad()
         self.title = "Home"
         setBarAppearances()
-        getHomeItems()
+        getData(nil)
         registerSectionHeaderNib()
+        initializeRefresher()
+        showProperBarButton(nil, logoutSelector: #selector(HomeView.logout))
     }
     
     //MARK: Private Helper Methods
-    func getHomeItems(){
+    func getData(completion:(()->Void)?){
         SalyangozAPI.sharedAPI.getHomeFeed { (feed, error) in
+            if let completion = completion{
+                completion()
+            }
             if let feed = feed{
                 self.feed = feed
                 self.tableView.reloadData()
@@ -39,9 +45,21 @@ class HomeView: UIViewController, BarAppearances{
         let nib = UINib(nibName: String(HomeSectionHeader), bundle: nil)
         tableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: String(HomeSectionHeader))
     }
+    
+    func getCellItem(indexPath: NSIndexPath) -> Post?{
+        if let feed = self.feed{
+            if let sectionItem: User = feed[indexPath.section]{
+                if let posts = sectionItem.posts{
+                    let cellPost: Post = posts[indexPath.row]
+                    return cellPost
+                }
+            }
+        }
+        return nil
+    }
 }
 
-extension HomeView: UITableViewDataSource, UITableViewDelegate{
+extension HomeView: UITableViewDataSource{
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if let feed = self.feed{
             return feed.count
@@ -62,13 +80,8 @@ extension HomeView: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(String(HomeCell), forIndexPath: indexPath) as! HomeCell
-        if let feed = self.feed{
-            if let sectionItem: User = feed[indexPath.section]{
-                if let posts = sectionItem.posts{
-                    let cellPost: Post = posts[indexPath.row]
-                    cell.configureCell(cellPost)
-                }
-            }
+        if let cellPost: Post = self.getCellItem(indexPath){
+            cell.configureCell(cellPost)
         }
         return cell
     }
@@ -110,5 +123,16 @@ extension HomeView: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         // you need to implement this method too or you can't swipe to display the actions
+    }
+}
+
+extension HomeView: UITableViewDelegate{
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let cellPost: Post = self.getCellItem(indexPath){
+            if let url = cellPost.url{
+                Wireframe.sharedWireframe.openURLInViewController(url, viewController: self)
+            }
+        }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

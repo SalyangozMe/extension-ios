@@ -7,6 +7,7 @@ target 'Salyangoz' do
     pod 'Fabric'
     pod 'TwitterKit'
     pod 'TwitterCore'
+    pod 'PullToRefresher', '~> 1.0'
 end
 
 target 'SalyangozKit' do

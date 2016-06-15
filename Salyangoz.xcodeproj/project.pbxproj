@@ -61,6 +61,7 @@
 		B3DE077B1D0A323C00D6B6FF /* KeychainAccess.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3B4AE961D0A2834002691A8 /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3DE077C1D0A323D00D6B6FF /* ObjectMapper.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3B4AE971D0A2834002691A8 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3DE077E1D0A40E400D6B6FF /* SharePreprocessor.js in Resources */ = {isa = PBXBuildFile; fileRef = B3DE077D1D0A40E400D6B6FF /* SharePreprocessor.js */; };
+		B3E7A3BE1D11760B00004B2E /* ListRefreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7A3BD1D11760B00004B2E /* ListRefreshable.swift */; };
 		B3FE975C1D0EBA9A002CA1C6 /* NSBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FE975B1D0EBA9A002CA1C6 /* NSBundleExtension.swift */; };
 		B3FE975E1D0EDE26002CA1C6 /* HomeSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FE975D1D0EDE26002CA1C6 /* HomeSectionHeader.swift */; };
 		B3FE97601D0EDE98002CA1C6 /* HomeSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3FE975F1D0EDE98002CA1C6 /* HomeSectionHeader.xib */; };
@@ -191,6 +192,7 @@
 		B3DE07421D0A2D1000D6B6FF /* Salyangoz.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Salyangoz.xcodeproj; sourceTree = "<group>"; };
 		B3DE07751D0A304900D6B6FF /* Pods_SalyangozKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_SalyangozKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Salyangoz-dieoqexbidxagpecdyihahzbhepy/Build/Products/Debug-iphonesimulator/Pods_SalyangozKit.framework"; sourceTree = "<group>"; };
 		B3DE077D1D0A40E400D6B6FF /* SharePreprocessor.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = SharePreprocessor.js; sourceTree = "<group>"; };
+		B3E7A3BD1D11760B00004B2E /* ListRefreshable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListRefreshable.swift; path = Protocols/ListRefreshable.swift; sourceTree = "<group>"; };
 		B3FE975B1D0EBA9A002CA1C6 /* NSBundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSBundleExtension.swift; path = Extensions/NSBundleExtension.swift; sourceTree = "<group>"; };
 		B3FE975D1D0EDE26002CA1C6 /* HomeSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeSectionHeader.swift; path = Cells/HomeSectionHeader.swift; sourceTree = "<group>"; };
 		B3FE975F1D0EDE98002CA1C6 /* HomeSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeSectionHeader.xib; path = "Storyboards & Nibs/HomeSectionHeader.xib"; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				B320DEC01D0BA81300CD9A59 /* BarAppearances.swift */,
+				B3E7A3BD1D11760B00004B2E /* ListRefreshable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -844,6 +847,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3E7A3BE1D11760B00004B2E /* ListRefreshable.swift in Sources */,
 				B396DA4F1D09A4D700D9133B /* Wireframe.swift in Sources */,
 				B320DEC51D0BB77D00CD9A59 /* UIColorExtension.swift in Sources */,
 				B3DCC7D51D105677000E711A /* TutorialContainerView.swift in Sources */,

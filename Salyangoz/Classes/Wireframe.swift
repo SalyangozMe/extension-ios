@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SalyangozKit
 import SafariServices
+import TwitterKit
 
 class Wireframe{
     static let sharedWireframe = Wireframe()
@@ -81,6 +82,14 @@ class Wireframe{
     func openURLInViewController(url: NSURL, viewController: UIViewController){
         let safariVC = SFSafariViewController(URL: url)
         viewController.presentViewController(safariVC, animated: true, completion: nil)
+    }
+    
+    func logout(){
+        if let session = Twitter.sharedInstance().sessionStore.session(){
+            Twitter.sharedInstance().sessionStore.logOutUserID(session.userID)
+        }
+        DataManager.sharedManager.removeSession()
+        self.showLoginViewAsRootView()
     }
     
 }

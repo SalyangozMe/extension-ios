@@ -8,6 +8,7 @@ PODS:
   - Fabric (1.6.7)
   - KeychainAccess (2.3.5)
   - ObjectMapper (1.2.0)
+  - PullToRefresher (1.3.1)
   - TimeAgoInWords (2.0.0)
   - TwitterCore (2.0.2):
     - Fabric
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - AlamofireObjectMapper (~> 3.0)
   - Fabric
   - KeychainAccess (from `https://github.com/kishikawakatsumi/KeychainAccess.git`)
+  - PullToRefresher (~> 1.0)
   - TimeAgoInWords
   - TwitterCore
   - TwitterKit
@@ -40,10 +42,11 @@ SPEC CHECKSUMS:
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   KeychainAccess: e283c1981a6c5655e1984cd411c6faf16fa165ae
   ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
+  PullToRefresher: e17cc032b48148824a77fbf4bce5beb81933071a
   TimeAgoInWords: be1144596814c8de5d2fe51a60977ec98115e4fb
   TwitterCore: 0f44d8980a6879d5205dcb4e010d15e643e56fa0
   TwitterKit: c4e40f289a3d7cc9fab9f241edd7502385468b65
 
-PODFILE CHECKSUM: a6c9ff8d01414818776f357bc3f70c52bbe257e5
+PODFILE CHECKSUM: 1066c1fb7d81e4cdeea56e2749f588cf8c85925b
 
 COCOAPODS: 1.0.0.rc.1

@@ -8,12 +8,14 @@
 
 import UIKit
 import Foundation
+import SalyangozKit
 
 protocol BarAppearances {
     func setBarAppearances()
 }
 
 extension BarAppearances where Self: UIViewController{
+    
     func setBarAppearances(){
         let titleTextAttributes = [ NSFontAttributeName: UIFont.applicationNavigationHeadingFont(),
                                     NSForegroundColorAttributeName: UIColor.applicationNavigationTitleColor()]
