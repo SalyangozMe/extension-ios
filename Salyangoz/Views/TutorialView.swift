@@ -11,6 +11,8 @@ import Foundation
 import SalyangozKit
 
 class TutorialView: UIViewController{
+    
+    @IBOutlet weak var stepLabel: UILabel!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -39,7 +41,12 @@ class TutorialView: UIViewController{
         if let item = item{
             label.text = item.text
             imageView.image = item.image
-            
+            if 0 != item.order{
+                stepLabel.hidden = false
+                stepLabel.text = "Step \(item.order):"
+            }else{
+                stepLabel.hidden = true
+            }
         }
     }
 }

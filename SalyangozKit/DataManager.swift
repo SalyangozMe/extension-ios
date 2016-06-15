@@ -22,11 +22,13 @@ public struct TutorialStruct{
     public var text: String
     public var image: UIImage
     public var type: TutorialItemType
+    public var order: Int
     
-    init(text: String, image: UIImage, type: TutorialItemType){
-        self.text = text
-        self.image = image
+    init(text: String, image: UIImage, type: TutorialItemType, order: Int){
         self.type = type
+        self.text = text
+        self.order = order
+        self.image = image
     }
 }
 
@@ -117,10 +119,10 @@ public class DataManager{
                 let aTutorial: TutorialStruct
                 if index == 0{
                     tutorialImage = UIImage(named: "Salyangoz")!
-                    aTutorial = TutorialStruct(text: text, image: tutorialImage, type: .Cover)
+                    aTutorial = TutorialStruct(text: text, image: tutorialImage, type: .Cover, order: index)
                 }else{
                     tutorialImage = UIImage(named: "TutorialImage\(index).png")!
-                    aTutorial = TutorialStruct(text: text, image: tutorialImage, type: .Normal)
+                    aTutorial = TutorialStruct(text: text, image: tutorialImage, type: .Normal, order:index)
                 }
                 tutorials?.append(aTutorial)
             }
