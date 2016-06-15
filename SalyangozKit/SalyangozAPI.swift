@@ -32,7 +32,7 @@ enum Router: URLRequestConvertible{
     var route: (path: String, parameters: [String: AnyObject]?) {
         switch self {
         case .Login(let authToken, let authTokenSecret):
-            return ("/login", ["token":authToken, "secret":authTokenSecret])
+            return ("/login", ["token":authToken, "secret":authTokenSecret, "type": "ios"])
         case .Recent:
             return ("/recent", nil)
         case .Home(let userToken):
