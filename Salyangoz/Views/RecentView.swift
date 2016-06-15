@@ -32,16 +32,15 @@ class RecentView: UIViewController, BarAppearances, ListRefreshable{
         super.viewDidLoad()
         self.title = "Recent"
         setBarAppearances()
-        getData(nil)
         initializeRefresher()
         showProperBarButton(#selector(RecentView.login), logoutSelector: #selector(RecentView.logout))
+        getData()
     }
     
-    func getData(completion: (() -> Void)?) {
+    func getData() {
+        self.tableView.startRefreshing()
         SalyangozAPI.sharedAPI.getRecentFeed { (feed, error) in
-            if let completion = completion{
-                completion()
-            }
+            self.tableView.endRefreshing()
             if feed != nil{
                 self.feed = feed
                 self.tableView.reloadData()

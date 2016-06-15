@@ -8,9 +8,9 @@
 
 import Foundation
 import UIKit
+import TwitterKit
 import SalyangozKit
 import SafariServices
-import TwitterKit
 
 class Wireframe{
     static let sharedWireframe = Wireframe()
@@ -91,5 +91,4 @@ class Wireframe{
         DataManager.sharedManager.removeSession()
         self.showLoginViewAsRootView()
     }
-    
 }

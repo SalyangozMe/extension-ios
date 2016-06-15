@@ -62,6 +62,8 @@
 		B3DE077C1D0A323D00D6B6FF /* ObjectMapper.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3B4AE971D0A2834002691A8 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3DE077E1D0A40E400D6B6FF /* SharePreprocessor.js in Resources */ = {isa = PBXBuildFile; fileRef = B3DE077D1D0A40E400D6B6FF /* SharePreprocessor.js */; };
 		B3E7A3BE1D11760B00004B2E /* ListRefreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7A3BD1D11760B00004B2E /* ListRefreshable.swift */; };
+		B3E7A3CB1D11AD0B00004B2E /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7A3C91D11AD0B00004B2E /* PullToRefresh.swift */; };
+		B3E7A3CC1D11AD0B00004B2E /* UIScrollView+PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7A3CA1D11AD0B00004B2E /* UIScrollView+PullToRefresh.swift */; };
 		B3FE975C1D0EBA9A002CA1C6 /* NSBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FE975B1D0EBA9A002CA1C6 /* NSBundleExtension.swift */; };
 		B3FE975E1D0EDE26002CA1C6 /* HomeSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FE975D1D0EDE26002CA1C6 /* HomeSectionHeader.swift */; };
 		B3FE97601D0EDE98002CA1C6 /* HomeSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3FE975F1D0EDE98002CA1C6 /* HomeSectionHeader.xib */; };
@@ -193,6 +195,8 @@
 		B3DE07751D0A304900D6B6FF /* Pods_SalyangozKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_SalyangozKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Salyangoz-dieoqexbidxagpecdyihahzbhepy/Build/Products/Debug-iphonesimulator/Pods_SalyangozKit.framework"; sourceTree = "<group>"; };
 		B3DE077D1D0A40E400D6B6FF /* SharePreprocessor.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = SharePreprocessor.js; sourceTree = "<group>"; };
 		B3E7A3BD1D11760B00004B2E /* ListRefreshable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListRefreshable.swift; path = Protocols/ListRefreshable.swift; sourceTree = "<group>"; };
+		B3E7A3C91D11AD0B00004B2E /* PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
+		B3E7A3CA1D11AD0B00004B2E /* UIScrollView+PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+PullToRefresh.swift"; sourceTree = "<group>"; };
 		B3FE975B1D0EBA9A002CA1C6 /* NSBundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSBundleExtension.swift; path = Extensions/NSBundleExtension.swift; sourceTree = "<group>"; };
 		B3FE975D1D0EDE26002CA1C6 /* HomeSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeSectionHeader.swift; path = Cells/HomeSectionHeader.swift; sourceTree = "<group>"; };
 		B3FE975F1D0EDE98002CA1C6 /* HomeSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeSectionHeader.xib; path = "Storyboards & Nibs/HomeSectionHeader.xib"; sourceTree = "<group>"; };
@@ -311,6 +315,7 @@
 				B320DEBF1D0BA7DD00CD9A59 /* Protocols */,
 				B3637F721D08AA72002A3AFF /* Storyboards & Nibs */,
 				B3637F711D08A3C8002A3AFF /* Supporting Files */,
+				B3E7A3C71D11ACE500004B2E /* Vendors */,
 				B3637F811D0980EC002A3AFF /* Views */,
 			);
 			path = Salyangoz;
@@ -435,6 +440,24 @@
 			children = (
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B3E7A3C71D11ACE500004B2E /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				B3E7A3C81D11AD0B00004B2E /* PullToRefresh */,
+			);
+			name = Vendors;
+			sourceTree = "<group>";
+		};
+		B3E7A3C81D11AD0B00004B2E /* PullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				B3E7A3C91D11AD0B00004B2E /* PullToRefresh.swift */,
+				B3E7A3CA1D11AD0B00004B2E /* UIScrollView+PullToRefresh.swift */,
+			);
+			name = PullToRefresh;
+			path = Vendors/PullToRefresh;
 			sourceTree = "<group>";
 		};
 		B3FE975A1D0EBA6C002CA1C6 /* Extensions */ = {
@@ -859,7 +882,9 @@
 				B320DEC11D0BA81300CD9A59 /* BarAppearances.swift in Sources */,
 				B320DEBE1D0BA78500CD9A59 /* HomeView.swift in Sources */,
 				B3DCC7CD1D10490B000E711A /* TutorialView.swift in Sources */,
+				B3E7A3CC1D11AD0B00004B2E /* UIScrollView+PullToRefresh.swift in Sources */,
 				B320DEC31D0BAC3C00CD9A59 /* UIViewControllerExtension.swift in Sources */,
+				B3E7A3CB1D11AD0B00004B2E /* PullToRefresh.swift in Sources */,
 				B320DEA71D0B83BD00CD9A59 /* SalyangozButton.swift in Sources */,
 				B396DA651D09B3FB00D9133B /* UIFontExtension.swift in Sources */,
 				B3DCC7D21D10524C000E711A /* TutorialPageViewController.swift in Sources */,

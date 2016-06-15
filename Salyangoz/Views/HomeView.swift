@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 import SalyangozKit
-import PullToRefresh
 
 class HomeView: UIViewController, BarAppearances, ListRefreshable{
     
@@ -20,18 +19,17 @@ class HomeView: UIViewController, BarAppearances, ListRefreshable{
         super.viewDidLoad()
         self.title = "Home"
         setBarAppearances()
-        getData(nil)
         registerSectionHeaderNib()
         initializeRefresher()
+        getData()
         showProperBarButton(nil, logoutSelector: #selector(HomeView.logout))
     }
     
     //MARK: Private Helper Methods
-    func getData(completion:(()->Void)?){
+    func getData(){
+        self.tableView.startRefreshing()
         SalyangozAPI.sharedAPI.getHomeFeed { (feed, error) in
-            if let completion = completion{
-                completion()
-            }
+            self.tableView.endRefreshing()
             if let feed = feed{
                 self.feed = feed
                 self.tableView.reloadData()

@@ -8,22 +8,20 @@
 
 import UIKit
 import Foundation
-import PullToRefresh
+import SnapKit
 
 protocol ListRefreshable{
     weak var tableView: UITableView! {get set}
     
     func initializeRefresher()
-    func getData(completion: (()->Void)?)
+    func getData()
 }
 
 extension ListRefreshable where Self: UIViewController{
     func initializeRefresher(){
         let refresher = PullToRefresh()
         self.tableView.addPullToRefresh(refresher) {
-            self.getData({ _ in
-                self.tableView.endRefreshing()
-            })
+            self.getData()
         }
     }
 }
