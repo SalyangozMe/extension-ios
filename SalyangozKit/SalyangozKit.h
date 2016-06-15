@@ -3,7 +3,7 @@
 //  SalyangozKit
 //
 //  Created by Muhammed Said Özcan on 10/06/16.
-//  Copyright © 2016 Tower Labs. All rights reserved.
+//  Copyright © 2016 Salyangoz All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

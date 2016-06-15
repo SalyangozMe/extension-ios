@@ -3,7 +3,7 @@
 //  Salyangoz
 //
 //  Created by Muhammed Said Özcan on 09/06/16.
-//  Copyright © 2016 Tower Labs. All rights reserved.
+//  Copyright © 2016 Salyangoz All rights reserved.
 //
 
 import Foundation
@@ -13,9 +13,38 @@ let kServiceIdentifier = "com.towerlabs.salyangoz.service-identifier"
 let kUserSessionKey = "salyangozUserSession"
 let kTutorialSeenKey = "salyangozTutorialSeen"
 
+public enum TutorialItemType{
+    case Cover
+    case Normal
+}
+
+public struct TutorialStruct{
+    public var text: String
+    public var image: UIImage
+    public var type: TutorialItemType
+    
+    init(text: String, image: UIImage, type: TutorialItemType){
+        self.text = text
+        self.image = image
+        self.type = type
+    }
+}
+
+
 public class DataManager{
     private let sharedKeychain = Keychain(service: kServiceIdentifier)
     public static let sharedManager = DataManager()
+    
+    private var tutorialTexts: [String] = {
+        return ["Hello,\nWelcome to Salyangoz for iOS!",
+                "To share links from iOS,\nOpen Safari on your iPhone or iPod touch",
+                "Then tap the Share button",
+                "And tap More",
+                "Enable Salyangoz and tap done",
+                "Now you can start sharing by logging in!"]
+    }()
+    
+    private var tutorials: [TutorialStruct]?
     
     // MARK: Session Methods
     
@@ -78,5 +107,24 @@ public class DataManager{
             return true
         }
         return false
+    }
+    
+    public func getTutorials() -> [TutorialStruct]?{
+        if (tutorials == nil){
+            tutorials = []
+            for (index, text) in tutorialTexts.enumerate(){
+                let tutorialImage: UIImage
+                let aTutorial: TutorialStruct
+                if index == 0{
+                    tutorialImage = UIImage(named: "Salyangoz")!
+                    aTutorial = TutorialStruct(text: text, image: tutorialImage, type: .Cover)
+                }else{
+                    tutorialImage = UIImage(named: "TutorialImage\(index).png")!
+                    aTutorial = TutorialStruct(text: text, image: tutorialImage, type: .Normal)
+                }
+                tutorials?.append(aTutorial)
+            }
+        }
+        return tutorials
     }
 }
