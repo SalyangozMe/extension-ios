@@ -28,11 +28,12 @@ class LoginView: UIViewController {
     // MARK: Private Helper Methods
     
     func initializeLoginButton(){
-        self.loginWithTwitterButton.logInCompletion = {(session, error) in
+        self.loginWithTwitterButton.logInCompletion = {(session, error: NSError?) in
             if let unwrappedSession = session {
                 self.makeLoginToSalyangozService(unwrappedSession.authToken, authTokenSecret: unwrappedSession.authTokenSecret)
-            } else {
-                print(error)
+            } else if let error = error{
+                let firstAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+                self.alert("An error occured", message: error.localizedDescription, action: firstAction)
             }
             
         }
@@ -45,7 +46,8 @@ class LoginView: UIViewController {
             if success{
                 Wireframe.sharedWireframe.showTabBarWithLogin()
             }else{
-                print("Can't log in.")
+                let firstAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+                self.alert("Can not log in", message: "Please try again later.", action: firstAction)
             }
         })
     }
