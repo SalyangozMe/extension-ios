@@ -17,14 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Salyangoz" translatesAutoresizingMaskIntoConstraints="NO" id="a0z-CI-1qi">
-                                <rect key="frame" x="250" y="187" width="100" height="77"/>
+                                <rect key="frame" x="250" y="175" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="77" id="JUY-gC-1z8"/>
+                                    <constraint firstAttribute="height" constant="100" id="JUY-gC-1z8"/>
                                     <constraint firstAttribute="width" constant="100" id="oVE-wt-2NZ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salyangoz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIb-gb-Bnk">
-                                <rect key="frame" x="253" y="284" width="95" height="26"/>
+                                <rect key="frame" x="253" y="275" width="95" height="26"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -33,7 +33,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="a0z-CI-1qi" firstAttribute="centerX" secondItem="8Ta-Rs-SnI" secondAttribute="centerX" id="AIa-3z-mKv"/>
-                            <constraint firstItem="fIb-gb-Bnk" firstAttribute="top" secondItem="a0z-CI-1qi" secondAttribute="bottom" constant="20" id="Hg0-pa-9LW"/>
+                            <constraint firstItem="fIb-gb-Bnk" firstAttribute="top" secondItem="a0z-CI-1qi" secondAttribute="bottom" id="Hg0-pa-9LW"/>
                             <constraint firstItem="a0z-CI-1qi" firstAttribute="centerY" secondItem="8Ta-Rs-SnI" secondAttribute="centerY" constant="-75" id="UqX-iA-khC"/>
                             <constraint firstItem="fIb-gb-Bnk" firstAttribute="centerX" secondItem="8Ta-Rs-SnI" secondAttribute="centerX" id="ZkD-6j-nm3"/>
                         </constraints>
@@ -45,6 +45,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Salyangoz" width="100" height="79"/>
+        <image name="Salyangoz" width="100" height="100"/>
     </resources>
 </document>
