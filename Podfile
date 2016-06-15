@@ -7,7 +7,6 @@ target 'Salyangoz' do
     pod 'Fabric'
     pod 'TwitterKit'
     pod 'TwitterCore'
-    pod 'SnapKit'
 end
 
 target 'SalyangozKit' do

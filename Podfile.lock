@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (3.3.1)
+  - Alamofire (3.4.0)
   - AlamofireImage (2.4.0):
     - Alamofire (~> 3.3)
   - AlamofireObjectMapper (3.0.0):
@@ -8,7 +8,6 @@ PODS:
   - Fabric (1.6.7)
   - KeychainAccess (2.3.5)
   - ObjectMapper (1.2.0)
-  - SnapKit (0.20.0)
   - TimeAgoInWords (2.0.0)
   - TwitterCore (2.0.2):
     - Fabric
@@ -21,7 +20,6 @@ DEPENDENCIES:
   - AlamofireObjectMapper (~> 3.0)
   - Fabric
   - KeychainAccess (from `https://github.com/kishikawakatsumi/KeychainAccess.git`)
-  - SnapKit
   - TimeAgoInWords
   - TwitterCore
   - TwitterKit
@@ -36,17 +34,16 @@ CHECKOUT OPTIONS:
     :git: https://github.com/kishikawakatsumi/KeychainAccess.git
 
 SPEC CHECKSUMS:
-  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
   AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
   AlamofireObjectMapper: 2d16585d06177be0116d76de73497e77437798af
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   KeychainAccess: e283c1981a6c5655e1984cd411c6faf16fa165ae
   ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
-  SnapKit: 5fce3c1bbbf1fbd31de9aa92f33eb9fa03f15650
   TimeAgoInWords: be1144596814c8de5d2fe51a60977ec98115e4fb
   TwitterCore: 0f44d8980a6879d5205dcb4e010d15e643e56fa0
   TwitterKit: c4e40f289a3d7cc9fab9f241edd7502385468b65
 
-PODFILE CHECKSUM: f6957fcd5be9ea1fe76b0015dc1038782b82c3df
+PODFILE CHECKSUM: f4bb9fc4f625c5745fe92f3de6be69f672282254
 
 COCOAPODS: 1.0.0.rc.1
