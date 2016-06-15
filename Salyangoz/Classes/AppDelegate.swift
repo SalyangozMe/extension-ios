@@ -18,8 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        DataManager.sharedManager.removeSession()
-        DataManager.sharedManager.setTutorialSeen(false)
         var credentials = NSBundle.contentsOfFile("Credentials.plist")
         if let consumerKey = credentials["consumerKey"] as? String, consumerSecret = credentials["consumerSecret"] as? String{
             Twitter.sharedInstance().startWithConsumerKey(consumerKey, consumerSecret: consumerSecret)

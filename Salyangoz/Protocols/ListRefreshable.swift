@@ -8,7 +8,6 @@
 
 import UIKit
 import Foundation
-import SnapKit
 
 protocol ListRefreshable{
     weak var tableView: UITableView! {get set}
