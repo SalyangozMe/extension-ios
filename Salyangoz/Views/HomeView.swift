@@ -3,7 +3,7 @@
 //  Salyangoz
 //
 //  Created by Muhammed Said Özcan on 11/06/16.
-//  Copyright © 2016 Tower Labs. All rights reserved.
+//  Copyright © 2016 Salyangoz All rights reserved.
 //
 
 import UIKit
@@ -75,7 +75,7 @@ extension HomeView: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableHeaderFooterViewWithIdentifier(String(HomeSectionHeader)) as! HomeSectionHeader
-        cell.contentView.backgroundColor = UIColor.blueColor()
+
         if let feed = self.feed{
             if let sectionItem: User = feed[section]{
                 cell.configureCell(sectionItem)
@@ -96,10 +96,10 @@ extension HomeView: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
-        let archive = UITableViewRowAction(style: .Normal, title: "Read") { action, index in
-            print("more button tapped")
+        let archive = UITableViewRowAction(style: .Normal, title: NSLocalizedString("Visited", comment: "")) { action, index in
+            
         }
-        archive.backgroundColor = UIColor.greenColor()
+        archive.backgroundColor = UIColor(red: 0.0, green: 0.65, blue:0.35, alpha: 1)
         return [archive]
     }
     
