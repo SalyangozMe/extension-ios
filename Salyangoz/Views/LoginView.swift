@@ -30,7 +30,7 @@ class LoginView: UIViewController {
     func initializeLoginButton(){
         self.loginWithTwitterButton.logInCompletion = {(session, error: NSError?) in
             if let unwrappedSession = session {
-                self.makeLoginToSalyangozService(unwrappedSession.authToken, authTokenSecret: unwrappedSession.authTokenSecret)
+                self.makeLoginToSalyangozService(unwrappedSession.authTokenSecret, authTokenSecret: unwrappedSession.authToken)
             } else if let error = error{
                 let firstAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
                 self.alert("An error occured", message: error.localizedDescription, action: firstAction)
