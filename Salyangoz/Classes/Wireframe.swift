@@ -3,7 +3,7 @@
 //  Salyangoz
 //
 //  Created by Muhammed Said Özcan on 09/06/16.
-//  Copyright © 2016 Tower Labs. All rights reserved.
+//  Copyright © 2016 Salyangoz All rights reserved.
 //
 
 import Foundation
@@ -68,7 +68,9 @@ class Wireframe{
     }
     
     func showTutorialAsRootView(){
-        
+        if let tutorialContainerView: TutorialContainerView = UIStoryboard.mainStoryboard().instantiateViewControllerWithIdentifier(String(TutorialContainerView)) as? TutorialContainerView{
+            self.keyWindow?.rootViewController = tutorialContainerView
+        }
     }
     
     func showTabBarAsRootView(){
