@@ -70,7 +70,6 @@ public class SalyangozAPI{
         switch response.result{
         case .Success:
             if let feed = response.result.value{
-                print(feed)
                 dispatch_async(dispatch_get_main_queue(), {
                     completion(feed: feed, error: nil)
                 })
