@@ -34,7 +34,7 @@ class RecentView: UIViewController, BarAppearances, ListRefreshable{
         setBarAppearances()
         initializeRefresher()
         showProperBarButton(#selector(RecentView.login), logoutSelector: #selector(RecentView.logout))
-        getData()
+        self.getData()
     }
     
     func getData() {

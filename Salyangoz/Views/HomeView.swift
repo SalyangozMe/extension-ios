@@ -21,7 +21,7 @@ class HomeView: UIViewController, BarAppearances, ListRefreshable{
         setBarAppearances()
         registerSectionHeaderNib()
         initializeRefresher()
-        getData()
+        self.getData()
         showProperBarButton(nil, logoutSelector: #selector(HomeView.logout))
     }
     
