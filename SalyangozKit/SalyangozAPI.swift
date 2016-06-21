@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 
+public typealias booleanCompletionHandlerType = (Bool)->Void
+
 enum Router: URLRequestConvertible{
     static let baseURL = NSURL(string: "https://salyangoz.me")!
     static let baseServiceURL = NSURL(string: "https://salyangoz.me/api/v1/mobile")!
@@ -18,6 +20,7 @@ enum Router: URLRequestConvertible{
     case Home(String)
     case Login(String, String)
     case ShareToSalyangoz(Int, String, String, String)
+    case MarkAsVisited(Int)
     
     var URL: NSURL {
         switch self{
@@ -39,6 +42,8 @@ enum Router: URLRequestConvertible{
             return ("/posts/home", ["token":userToken])
         case .ShareToSalyangoz(let userId, let token, let url, let title):
             return ("/posts", ["id":userId, "token": "\(token)", "url":"\(url)", "title":"\(title)"])
+        case .MarkAsVisited(let postId):
+            return ("/posts/\(postId)/visit", nil)
         }
     }
     
@@ -52,6 +57,8 @@ enum Router: URLRequestConvertible{
             return .POST
         case .ShareToSalyangoz:
             return .POST
+        case .MarkAsVisited:
+            return .GET
         }
     }
     
@@ -86,6 +93,19 @@ public class SalyangozAPI{
         }
     }
     
+    func booleanCompletionHandler(response: Response<AnyObject, NSError>, completion: booleanCompletionHandlerType?){
+        if let completion = completion{
+            dispatch_async(dispatch_get_main_queue(), {
+                switch response.result{
+                case .Success:
+                    completion(true)
+                case .Failure(_):
+                    completion(false)
+                }
+            })
+        }
+    }
+    
     //MARK: Endpoints
     
     public func login(authToken:String, authTokenSecret: String, completion:(success: Bool) -> Void){
@@ -115,14 +135,7 @@ public class SalyangozAPI{
         guard let title = post.title else { return }
         
         Alamofire.request(Router.ShareToSalyangoz(userId, token, url.absoluteString, title)).responseJSON(completionHandler: { (response: Response<AnyObject, NSError>) in
-            dispatch_async(dispatch_get_main_queue(), {
-                switch response.result{
-                case .Success:
-                    completion(success:true)
-                case .Failure(_):
-                    completion(success:false)
-                }
-            })
+            self.booleanCompletionHandler(response, completion: completion)
         })
     }
     
@@ -139,5 +152,13 @@ public class SalyangozAPI{
         Alamofire.request(Router.Home(token)).responseArray(completionHandler: { (response:Response<[User], NSError>) in
             self.feedsCompletionHandler(response, completion: completion)
         })
+    }
+    
+    public func markPostAsVisited(post: Post, completion: booleanCompletionHandlerType?){
+        if let postId = post.postId{
+            Alamofire.request(Router.MarkAsVisited(postId)).responseJSON { (response: Response<AnyObject, NSError>) in
+                self.booleanCompletionHandler(response, completion: completion)
+            }
+        }
     }
 }
