@@ -35,29 +35,29 @@
 	<dict>
 		<key>NSExtensionAttributes</key>
 		<dict>
-			<key>NSExtensionActivationRule</key>
-			<dict>
-				<key>NSExtensionActivationSupportsAttachmentsWithMaxCount</key>
-				<integer>1</integer>
-				<key>NSExtensionActivationSupportsAttachmentsWithMinCount</key>
-				<integer>1</integer>
-				<key>NSExtensionActivationSupportsFileWithMaxCount</key>
-				<integer>1</integer>
-				<key>NSExtensionActivationSupportsImageWithMaxCount</key>
-				<integer>0</integer>
-				<key>NSExtensionActivationSupportsMovieWithMaxCount</key>
-				<integer>0</integer>
-				<key>NSExtensionActivationSupportsText</key>
-				<false/>
-				<key>NSExtensionActivationSupportsWebPageWithMaxCount</key>
-				<integer>1</integer>
-				<key>NSExtensionActivationSupportsWebURLWithMaxCount</key>
-				<integer>1</integer>
-			</dict>
-			<key>NSExtensionJavaScriptPreprocessingFile</key>
-			<string>SharePreprocessor</string>
-		</dict>
-		<key>NSExtensionMainStoryboard</key>
+            <key>NSExtensionActivationRule</key>
+            <dict>
+                <key>NSExtensionActivationSupportsAttachmentsWithMaxCount</key>
+                <integer>0</integer>
+                <key>NSExtensionActivationSupportsAttachmentsWithMinCount</key>
+                <integer>0</integer>
+                <key>NSExtensionActivationSupportsFileWithMaxCount</key>
+                <integer>0</integer>
+                <key>NSExtensionActivationSupportsImageWithMaxCount</key>
+                <integer>0</integer>
+                <key>NSExtensionActivationSupportsMovieWithMaxCount</key>
+                <integer>0</integer>
+                <key>NSExtensionActivationSupportsText</key>
+                <integer>1</integer>
+                <key>NSExtensionActivationSupportsWebPageWithMaxCount</key>
+                <integer>1</integer>
+                <key>NSExtensionActivationSupportsWebURLWithMaxCount</key>
+                <integer>1</integer>
+            </dict>
+            <key>NSExtensionJavaScriptPreprocessingFile</key>
+            <string>SharePreprocessor</string>
+        </dict>
+        <key>NSExtensionMainStoryboard</key>
 		<string>MainInterface</string>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.share-services</string>
