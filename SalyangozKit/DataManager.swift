@@ -12,6 +12,7 @@ import KeychainAccess
 let kServiceIdentifier = "com.towerlabs.salyangoz.service-identifier"
 let kUserSessionKey = "salyangozUserSession"
 let kTutorialSeenKey = "salyangozTutorialSeen"
+let kAppGroupId = "group.ShareExtensionSharingDefaults"
 
 public enum TutorialItemType{
     case Cover
@@ -34,7 +35,8 @@ public struct TutorialStruct{
 
 
 public class DataManager{
-    private let sharedKeychain = Keychain(service: kServiceIdentifier)
+    private let sharedKeychain = Keychain(service: kServiceIdentifier).accessibility(.AlwaysThisDeviceOnly)
+    private let sharedDefaults = NSUserDefaults(suiteName: kAppGroupId)
     public static let sharedManager = DataManager()
     
     private var tutorialTexts: [String] = {
@@ -52,44 +54,27 @@ public class DataManager{
     
     public func createSession(user: User){
         let loginResponseData = NSKeyedArchiver.archivedDataWithRootObject(user)
-        do {
-            try sharedKeychain.set(loginResponseData, key: kUserSessionKey)
-        }catch {
-            print(error)
-        }
+        sharedDefaults?.setObject(loginResponseData, forKey: kUserSessionKey)
     }
     
     public func isLoggedIn() -> Bool{
-        do {
-            if let _ = try sharedKeychain.getData(kUserSessionKey){
-                return true
-            }else{
-                return false
-            }
-        }catch {
+        if let _ = sharedDefaults?.objectForKey(kUserSessionKey){
+            return true
+        }else{
             return false
         }
     }
     
     public func removeSession(){
-        do {
-            try sharedKeychain.remove(kUserSessionKey)
-        }catch {
-            print(error)
-        }
+        sharedDefaults?.removeObjectForKey(kUserSessionKey)
     }
     
     public func getSession() -> User?{
-        do {
-            if let userData: NSData = try sharedKeychain.getData(kUserSessionKey){
-                NSKeyedUnarchiver.setClass(User.self, forClassName: "SalyangozKit.User")
-                if let user = NSKeyedUnarchiver.unarchiveObjectWithData(userData) as? User{
-                    return user
-                }
+        if let userData = sharedDefaults?.objectForKey(kUserSessionKey) as? NSData{
+            NSKeyedUnarchiver.setClass(User.self, forClassName: "SalyangozKit.User")
+            if let user = NSKeyedUnarchiver.unarchiveObjectWithData(userData) as? User{
+                return user
             }
-        }catch {
-            print(error)
-            return nil
         }
         return nil
     }
