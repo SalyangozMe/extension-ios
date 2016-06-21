@@ -30,7 +30,7 @@ class TutorialContainerView: UIViewController{
         }
     }
     @IBAction func goToNext(sender: AnyObject) {
-        if pageControl.currentPage == pageControl.numberOfPages - 1{
+        if pageControl.currentPage == pageControl.numberOfPages - 2{
             Wireframe.sharedWireframe.showLoginViewAsRootView()
         }else{
             tutorialPageViewController?.scrollToNextViewController()
@@ -53,7 +53,7 @@ extension TutorialContainerView: TutorialPageViewControllerDelegate {
     func tutorialPageViewController(tutorialPageViewController: TutorialPageViewController,
                                     didUpdatePageIndex index: Int) {
         if index == pageControl.numberOfPages - 1{
-            nextButton.setTitle("Login", forState: .Normal)
+            Wireframe.sharedWireframe.showLoginViewAsRootView()
         }
         pageControl.currentPage = index
     }

@@ -11,7 +11,7 @@ import SalyangozKit
 
 class TutorialPageViewController: UIPageViewController {
     weak var tutorialDelegate: TutorialPageViewControllerDelegate?
-    var tutorialViews: [TutorialView] = []
+    var tutorialViews: [UIViewController] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,9 @@ class TutorialPageViewController: UIPageViewController {
                 let tutorialView = self.newTutorialViewController(item)
                 tutorialViews.append(tutorialView)
             }
+            
+            let loginView = UIStoryboard.mainStoryboard().instantiateViewControllerWithIdentifier(String(LoginView))
+            tutorialViews.append(loginView)
         }
         
         if let initialViewController = tutorialViews.first {
@@ -83,7 +86,7 @@ class TutorialPageViewController: UIPageViewController {
      */
     private func notifyTutorialDelegateOfNewIndex() {
         if let firstViewController = viewControllers?.first,
-            let index = tutorialViews.indexOf(firstViewController as! TutorialView) {
+            let index = tutorialViews.indexOf(firstViewController) {
             tutorialDelegate?.tutorialPageViewController(self,
                                                          didUpdatePageIndex: index)
         }
@@ -97,7 +100,7 @@ extension TutorialPageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController,
                             viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = tutorialViews.indexOf(viewController as! TutorialView) else {
+        guard let viewControllerIndex = tutorialViews.indexOf(viewController) else {
             return nil
         }
         
@@ -112,7 +115,7 @@ extension TutorialPageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController,
                             viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = tutorialViews.indexOf(viewController as! TutorialView) else {
+        guard let viewControllerIndex = tutorialViews.indexOf(viewController) else {
             return nil
         }
         
