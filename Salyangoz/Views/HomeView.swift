@@ -55,6 +55,16 @@ class HomeView: UIViewController, BarAppearances, ListRefreshable{
         }
         return nil
     }
+    
+    func removePostAtIndex(indexPath: NSIndexPath){
+        self.feed?[indexPath.section].posts?.removeAtIndex(indexPath.row)
+    }
+    
+    func markPostAsVisited(at index: NSIndexPath, completion:booleanCompletionHandlerType?){
+        if let cellPost = self.getCellItem(index){
+            SalyangozAPI.sharedAPI.markPostAsVisited(cellPost, completion: completion)
+        }
+    }
 }
 
 extension HomeView: UITableViewDataSource{
@@ -83,10 +93,12 @@ extension HomeView: UITableViewDataSource{
         }
         return cell
     }
-    
+}
+
+extension HomeView: UITableViewDelegate{
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableHeaderFooterViewWithIdentifier(String(HomeSectionHeader)) as! HomeSectionHeader
-
+        
         if let feed = self.feed{
             if let sectionItem: User = feed[section]{
                 cell.configureCell(sectionItem)
@@ -108,10 +120,12 @@ extension HomeView: UITableViewDataSource{
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
         let archive = UITableViewRowAction(style: .Normal, title: NSLocalizedString("Visited", comment: "")) { action, index in
-            
+            self.markPostAsVisited(at: indexPath, completion: { (success) in
+                
+            })
         }
         archive.backgroundColor = UIColor(red: 0.0, green: 0.65, blue:0.35, alpha: 1)
-        return [archive]
+        return nil
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -122,13 +136,12 @@ extension HomeView: UITableViewDataSource{
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         // you need to implement this method too or you can't swipe to display the actions
     }
-}
-
-extension HomeView: UITableViewDelegate{
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let cellPost: Post = self.getCellItem(indexPath){
             if let url = cellPost.url{
                 Wireframe.sharedWireframe.openURLInViewController(url, viewController: self)
+                self.markPostAsVisited(at: indexPath, completion: nil)
             }
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
