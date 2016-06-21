@@ -42,7 +42,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="ngD-IT-hNb"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="16"/>
                             <color key="textColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                             <variation key="default">
@@ -71,11 +71,11 @@
                             <exclude reference="MqQ-Vc-tbr"/>
                         </mask>
                         <mask key="constraints">
-                            <exclude reference="2Dg-Vh-e1O"/>
-                            <exclude reference="UPf-X7-wmi"/>
                             <exclude reference="23M-NZ-zqF"/>
                             <exclude reference="btx-Zc-1wm"/>
                             <exclude reference="uH3-wc-0j3"/>
+                            <exclude reference="2Dg-Vh-e1O"/>
+                            <exclude reference="UPf-X7-wmi"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact">
@@ -84,11 +84,11 @@
                             <include reference="MqQ-Vc-tbr"/>
                         </mask>
                         <mask key="constraints">
-                            <include reference="2Dg-Vh-e1O"/>
-                            <include reference="UPf-X7-wmi"/>
                             <include reference="23M-NZ-zqF"/>
                             <include reference="btx-Zc-1wm"/>
                             <include reference="uH3-wc-0j3"/>
+                            <include reference="2Dg-Vh-e1O"/>
+                            <include reference="UPf-X7-wmi"/>
                         </mask>
                     </variation>
                 </view>
