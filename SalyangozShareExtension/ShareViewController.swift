@@ -13,11 +13,11 @@ import MobileCoreServices
 
 class ShareViewController: UIViewController {
     
-    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
     
     var urlAttachmentProvider: NSItemProvider?
+    var registeredIdentifier: CFString?
     
     override func beginRequestWithExtensionContext(context: NSExtensionContext) {
         super.beginRequestWithExtensionContext(context)
@@ -27,37 +27,42 @@ class ShareViewController: UIViewController {
             }
         }
     }
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.containerView.layer.cornerRadius = 20
         self.containerView.layer.masksToBounds = true
         
+        
         if let provider = urlAttachmentProvider{
-            if provider.hasItemConformingToTypeIdentifier(kUTTypeURL as String) ||
-                provider.hasItemConformingToTypeIdentifier(kUTTypePropertyList as String) {
-                
-                let completionHandler: NSItemProviderCompletionHandler = { (result: NSSecureCoding?, error: NSError!) in
-                    if error == nil {
-                        if let url = result as? NSURL{
-                            self.sharePage("", url: url.absoluteString)
-                        }else{
-                            self.complete(0)
-                        }
+            let completionHandler: NSItemProviderCompletionHandler = { (result: NSSecureCoding?, error: NSError!) in
+                if error == nil {
+                    if let url = result as? NSURL{
+                        self.sharePage("", url: url.absoluteString)
                     }else{
-                        self.complete(0)
+                        self.setMessageLabelText(NSLocalizedString("Error!", comment: ""))
                     }
+                }else{
+                    self.setMessageLabelText(NSLocalizedString("Error!", comment: ""))
                 }
+            }
+            
+            if provider.hasItemConformingToTypeIdentifier(kUTTypeURL as String){
                 
                 provider.loadItemForTypeIdentifier(kUTTypeURL as String,
                                                      options: nil,
                                                      completionHandler: completionHandler)
+                
+            }else if provider.hasItemConformingToTypeIdentifier(kUTTypePropertyList as String){
+                provider.loadItemForTypeIdentifier(kUTTypePropertyList as String,
+                                                   options: nil,
+                                                   completionHandler: completionHandler)
             }else{
-                self.complete(0)
+                self.setMessageLabelText(NSLocalizedString("Error!", comment: ""))
             }
         }else{
-            self.complete(0)
+            self.setMessageLabelText(NSLocalizedString("Error!", comment: ""))
         }
     }
     
@@ -72,11 +77,9 @@ class ShareViewController: UIViewController {
                 }else{
                     self.setMessageLabelText(NSLocalizedString("Error!", comment: ""))
                 }
-                self.complete(1)
             })
         }else{
             self.setMessageLabelText(NSLocalizedString("Please login first!", comment: ""))
-            self.complete(1)
         }
     }
     
@@ -84,9 +87,10 @@ class ShareViewController: UIViewController {
         dispatch_async(dispatch_get_main_queue(), {
             self.messageLabel.text = message
         })
+        self.complete()
     }
     
-    func complete(delay: Double = 1.5){
+    func complete(delay: Double = 1){
         let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC)))
         dispatch_after(delay, dispatch_get_main_queue()) {
             self.extensionContext?.completeRequestReturningItems(nil, completionHandler: nil)
