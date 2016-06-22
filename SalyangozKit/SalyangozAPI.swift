@@ -18,9 +18,11 @@ enum Router: URLRequestConvertible{
     
     case Recent
     case Home(String)
+    case News(String)
     case Login(String, String)
     case ShareToSalyangoz(Int, String, String, String)
-    case MarkAsVisited(Int)
+    case MarkPostAsVisited(Int, String)
+    case ArchivePost(Int, String)
     
     var URL: NSURL {
         switch self{
@@ -42,23 +44,21 @@ enum Router: URLRequestConvertible{
             return ("/posts/home", ["token":userToken])
         case .ShareToSalyangoz(let userId, let token, let url, let title):
             return ("/posts", ["id":userId, "token": "\(token)", "url":"\(url)", "title":"\(title)"])
-        case .MarkAsVisited(let postId):
-            return ("/posts/\(postId)/visit", nil)
+        case .MarkPostAsVisited(let postId, let token):
+            return ("/posts/\(postId)/visit", ["token": token])
+        case .News(let token):
+            return ("/posts/new", ["token": "\(token)"])
+        case .ArchivePost(let postId, let token):
+            return ("/posts/\(postId)/archive", ["token": token])
         }
     }
     
     var method: Alamofire.Method{
         switch self{
-        case .Recent:
+        case .Recent, .MarkPostAsVisited, .News:
             return .GET
-        case .Home:
+        case .Home, .Login, .ShareToSalyangoz, .ArchivePost:
             return .POST
-        case .Login:
-            return .POST
-        case .ShareToSalyangoz:
-            return .POST
-        case .MarkAsVisited:
-            return .GET
         }
     }
     
@@ -98,7 +98,16 @@ public class SalyangozAPI{
             dispatch_async(dispatch_get_main_queue(), {
                 switch response.result{
                 case .Success:
-                    completion(true)
+                    if let responseDict = response.result.value as? NSDictionary{
+                        let success = responseDict["success"] as! Bool
+                        if success{
+                            completion(true)
+                        }else{
+                            completion(false)
+                        }
+                    }else{
+                        completion(false)
+                    }
                 case .Failure(_):
                     completion(false)
                 }
@@ -149,16 +158,39 @@ public class SalyangozAPI{
         guard let sessionUser = DataManager.sharedManager.getSession() else { return }
         guard let token = sessionUser.token else { return }
         
+        Alamofire.request(Router.News(token)).responseArray(completionHandler: { (response:Response<[User], NSError>) in
+            self.feedsCompletionHandler(response, completion: completion)
+        })
+    }
+    
+    public func getNewsFeed(completion:(feed:[User]?, error:NSError?)->Void){
+        guard let sessionUser = DataManager.sharedManager.getSession() else { return }
+        guard let token = sessionUser.token else { return }
+        
         Alamofire.request(Router.Home(token)).responseArray(completionHandler: { (response:Response<[User], NSError>) in
             self.feedsCompletionHandler(response, completion: completion)
         })
     }
     
     public func markPostAsVisited(post: Post, completion: booleanCompletionHandlerType?){
+        guard let sessionUser = DataManager.sharedManager.getSession() else { return }
+        guard let token = sessionUser.token else { return }
+        
         if let postId = post.postId{
-            Alamofire.request(Router.MarkAsVisited(postId)).responseJSON { (response: Response<AnyObject, NSError>) in
+            Alamofire.request(Router.MarkPostAsVisited(postId, token)).responseJSON { (response: Response<AnyObject, NSError>) in
                 self.booleanCompletionHandler(response, completion: completion)
             }
+        }
+    }
+    
+    public func archivePost(post: Post, completion: booleanCompletionHandlerType?){
+        guard let sessionUser = DataManager.sharedManager.getSession() else { return }
+        guard let token = sessionUser.token else { return }
+        
+        if let postId = post.postId{
+            Alamofire.request(Router.ArchivePost(postId, token)).responseJSON(completionHandler: { (response: Response<AnyObject, NSError>) in
+                self.booleanCompletionHandler(response, completion: completion)
+            })
         }
     }
 }

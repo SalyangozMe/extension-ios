@@ -17,7 +17,7 @@ class HomeView: UIViewController, BarAppearances, ListRefreshable{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Home"
+        self.title = "New"
         setBarAppearances()
         registerSectionHeaderNib()
         initializeRefresher()
@@ -28,7 +28,7 @@ class HomeView: UIViewController, BarAppearances, ListRefreshable{
     //MARK: Private Helper Methods
     func getData(){
         self.tableView.startRefreshing()
-        SalyangozAPI.sharedAPI.getHomeFeed { (feed, error) in
+        SalyangozAPI.sharedAPI.getNewsFeed { (feed, error) in
             self.tableView.endRefreshing()
             if let feed = feed{
                 self.feed = feed
@@ -56,14 +56,27 @@ class HomeView: UIViewController, BarAppearances, ListRefreshable{
         return nil
     }
     
-    func removePostAtIndex(indexPath: NSIndexPath){
+    func removePost(at indexPath: NSIndexPath){
         self.feed?[indexPath.section].posts?.removeAtIndex(indexPath.row)
+        if self.feed?[indexPath.section].posts?.count == 0{
+            self.feed?.removeAtIndex(indexPath.section)
+        }
     }
     
-    func markPostAsVisited(at index: NSIndexPath, completion:booleanCompletionHandlerType?){
-        if let cellPost = self.getCellItem(index){
-            SalyangozAPI.sharedAPI.markPostAsVisited(cellPost, completion: completion)
+    func deleteRow(at indexPath: NSIndexPath){
+        self.tableView.beginUpdates()
+        
+    
+        if self.feed?[indexPath.section].posts?.count == 1{
+            self.tableView.deleteSections(NSIndexSet(index: indexPath.section), withRowAnimation: .Fade)
+        }else{
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
+        self.removePost(at: indexPath)
+        self.tableView.endUpdates()
+        
+        //let sections = NSIndexSet(index: indexPath.section)
+        //self.tableView.reloadSections(sections, withRowAnimation: .Fade)
     }
 }
 
@@ -97,6 +110,7 @@ extension HomeView: UITableViewDataSource{
 
 extension HomeView: UITableViewDelegate{
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard self.feed?[section].posts?.count > 0 else { return nil }
         let cell = tableView.dequeueReusableHeaderFooterViewWithIdentifier(String(HomeSectionHeader)) as! HomeSectionHeader
         
         if let feed = self.feed{
@@ -108,24 +122,26 @@ extension HomeView: UITableViewDelegate{
     }
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        guard self.feed?[section].posts?.count == 0 else { return nil }
         let footerView = UIView()
         footerView.backgroundColor = UIColor.clearColor()
         return footerView
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 5.0
+        return 10.0
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
-        let archive = UITableViewRowAction(style: .Normal, title: NSLocalizedString("Visited", comment: "")) { action, index in
-            self.markPostAsVisited(at: indexPath, completion: { (success) in
-                
-            })
+        let archive = UITableViewRowAction(style: .Normal, title: NSLocalizedString("Archive", comment: "")) { action, index in
+            if let cellPost = self.getCellItem(index){
+                self.deleteRow(at: indexPath)
+                SalyangozAPI.sharedAPI.archivePost(cellPost, completion: nil)
+            }
         }
         archive.backgroundColor = UIColor(red: 0.0, green: 0.65, blue:0.35, alpha: 1)
-        return nil
+        return [archive]
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -141,7 +157,8 @@ extension HomeView: UITableViewDelegate{
         if let cellPost: Post = self.getCellItem(indexPath){
             if let url = cellPost.url{
                 Wireframe.sharedWireframe.openURLInViewController(url, viewController: self)
-                self.markPostAsVisited(at: indexPath, completion: nil)
+                self.deleteRow(at: indexPath)
+                SalyangozAPI.sharedAPI.markPostAsVisited(cellPost, completion: nil)
             }
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
