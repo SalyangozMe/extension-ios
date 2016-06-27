@@ -40,6 +40,10 @@ extension UIViewController {
         _ = self.alert("Logging out", message: "Are you sure you want to log out?", firstAction: firstAction, secondAction: secondAction)
     }
     
+    func login(){
+        Wireframe.sharedWireframe.showLoginViewAsRootView()
+    }
+    
     private func _alert(title: String = "", message: String, firstAction: UIAlertAction, secondAction: UIAlertAction?){
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         alertController.addAction(firstAction)
