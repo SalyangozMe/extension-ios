@@ -11,13 +11,14 @@ import Alamofire
 import AlamofireObjectMapper
 
 public typealias booleanCompletionHandlerType = (Bool)->Void
+public typealias postBasedFeedCompletionHandlerType = (feed:[Post]?, error:NSError?)->Void
 
 enum Router: URLRequestConvertible{
     static let baseURL = NSURL(string: "https://salyangoz.me")!
     static let baseServiceURL = NSURL(string: "https://salyangoz.me/api/v1/mobile")!
     
     case Recent
-    case Home(String)
+    case Popular
     case News(String)
     case Login(String, String)
     case ShareToSalyangoz(Int, String, String, String)
@@ -26,7 +27,7 @@ enum Router: URLRequestConvertible{
     
     var URL: NSURL {
         switch self{
-        case .Recent:
+        case .Recent, .Popular:
             return Router.baseURL.URLByAppendingPathComponent(route.path)
         default:
             return Router.baseServiceURL.URLByAppendingPathComponent(route.path)
@@ -40,8 +41,6 @@ enum Router: URLRequestConvertible{
             return ("/login", ["token":authToken, "secret":authTokenSecret, "type": "ios"])
         case .Recent:
             return ("/recent", nil)
-        case .Home(let userToken):
-            return ("/posts/home", ["token":userToken])
         case .ShareToSalyangoz(let userId, let token, let url, let title):
             return ("/posts", ["id":userId, "token": "\(token)", "url":"\(url)", "title":"\(title)"])
         case .MarkPostAsVisited(let postId, let token):
@@ -50,14 +49,16 @@ enum Router: URLRequestConvertible{
             return ("/posts/new", ["token": "\(token)"])
         case .ArchivePost(let postId, let token):
             return ("/posts/\(postId)/archive", ["token": token])
+        case .Popular:
+            return ("/popular", nil)
         }
     }
     
     var method: Alamofire.Method{
         switch self{
-        case .Recent, .MarkPostAsVisited, .News:
+        case .Recent, .MarkPostAsVisited, .Popular:
             return .GET
-        case .Home, .Login, .ShareToSalyangoz, .ArchivePost:
+        case .Login, .ShareToSalyangoz, .ArchivePost, .News:
             return .POST
         }
     }
@@ -148,13 +149,13 @@ public class SalyangozAPI{
         })
     }
     
-    public func getRecentFeed(completion:(feed:[Post]?, error:NSError?)->Void){
+    public func getRecentFeed(completion: postBasedFeedCompletionHandlerType){
         Alamofire.request(Router.Recent).responseArray(keyPath:"posts"){ (response: Response<[Post], NSError>) in
             self.feedsCompletionHandler(response, completion: completion)
         }
     }
     
-    public func getHomeFeed(completion:(feed:[User]?, error:NSError?)->Void){
+    public func getNewsFeed(completion:(feed:[User]?, error:NSError?)->Void){
         guard let sessionUser = DataManager.sharedManager.getSession() else { return }
         guard let token = sessionUser.token else { return }
         
@@ -163,13 +164,10 @@ public class SalyangozAPI{
         })
     }
     
-    public func getNewsFeed(completion:(feed:[User]?, error:NSError?)->Void){
-        guard let sessionUser = DataManager.sharedManager.getSession() else { return }
-        guard let token = sessionUser.token else { return }
-        
-        Alamofire.request(Router.Home(token)).responseArray(completionHandler: { (response:Response<[User], NSError>) in
+    public func getPopularFeed(completion: postBasedFeedCompletionHandlerType){
+        Alamofire.request(Router.Popular).responseArray(keyPath:"posts"){ (response: Response<[Post], NSError>) in
             self.feedsCompletionHandler(response, completion: completion)
-        })
+        }
     }
     
     public func markPostAsVisited(post: Post, completion: booleanCompletionHandlerType?){
