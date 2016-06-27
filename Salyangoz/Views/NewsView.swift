@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  NewsView.swift
 //  Salyangoz
 //
 //  Created by Muhammed Said Özcan on 11/06/16.
@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import SalyangozKit
 
-class HomeView: UIViewController, BarAppearances, ListRefreshable{
+class NewsView: UIViewController, BarAppearances, ListRefreshable{
     
     var feed: [User]?
     @IBOutlet weak var tableView: UITableView!
@@ -22,7 +22,7 @@ class HomeView: UIViewController, BarAppearances, ListRefreshable{
         registerSectionHeaderNib()
         initializeRefresher()
         self.getData()
-        showProperBarButton(nil, logoutSelector: #selector(HomeView.logout))
+        showProperBarButton(nil, logoutSelector: #selector(NewsView.logout))
     }
     
     //MARK: Private Helper Methods
@@ -33,15 +33,17 @@ class HomeView: UIViewController, BarAppearances, ListRefreshable{
             if let feed = feed{
                 self.feed = feed
                 self.tableView.reloadData()
-            }else{
-                print(error?.localizedDescription)
+            }else if let error = error{
+                let firstAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+                self.alert("An error occured", message: error.localizedDescription, action: firstAction)
+                print(error.localizedDescription)
             }
         }
     }
     
     func registerSectionHeaderNib(){
-        let nib = UINib(nibName: String(HomeSectionHeader), bundle: nil)
-        tableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: String(HomeSectionHeader))
+        let nib = UINib(nibName: String(NewsSectionHeader), bundle: nil)
+        tableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: String(NewsSectionHeader))
     }
     
     func getCellItem(indexPath: NSIndexPath) -> Post?{
@@ -80,7 +82,7 @@ class HomeView: UIViewController, BarAppearances, ListRefreshable{
     }
 }
 
-extension HomeView: UITableViewDataSource{
+extension NewsView: UITableViewDataSource{
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if let feed = self.feed{
             return feed.count
@@ -100,7 +102,7 @@ extension HomeView: UITableViewDataSource{
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(String(HomeCell), forIndexPath: indexPath) as! HomeCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(String(NewsCell), forIndexPath: indexPath) as! NewsCell
         if let cellPost: Post = self.getCellItem(indexPath){
             cell.configureCell(cellPost)
         }
@@ -108,10 +110,10 @@ extension HomeView: UITableViewDataSource{
     }
 }
 
-extension HomeView: UITableViewDelegate{
+extension NewsView: UITableViewDelegate{
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard self.feed?[section].posts?.count > 0 else { return nil }
-        let cell = tableView.dequeueReusableHeaderFooterViewWithIdentifier(String(HomeSectionHeader)) as! HomeSectionHeader
+        let cell = tableView.dequeueReusableHeaderFooterViewWithIdentifier(String(NewsSectionHeader)) as! NewsSectionHeader
         
         if let feed = self.feed{
             if let sectionItem: User = feed[section]{
