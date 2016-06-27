@@ -1,5 +1,5 @@
 //
-//  HomeCell.swift
+//  NewsCell.swift
 //  Salyangoz
 //
 //  Created by Muhammed Said Özcan on 12/06/16.
@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import SalyangozKit
 
-class HomeCell: UITableViewCell{
+class NewsCell: UITableViewCell{
     @IBOutlet weak var viewCount: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var cellDetailLabel: UILabel!
@@ -24,20 +24,17 @@ class HomeCell: UITableViewCell{
     
     func configureCell(post: Post){
         titleLabel.text = post.title
-        if let itemURL = post.url, timeAgo = post.updatedAt?.timeAgoInWords(){
-            if let host = itemURL.host{
-                let cellDetailLabelText = "\(host) · \(timeAgo) ago"
-                cellDetailLabel.text = cellDetailLabelText
-            }
+        
+        if let postDetailsDescription = post.postDetailsDescription{
+            cellDetailLabel.text = postDetailsDescription
         }
         
         if let count = post.visitCount{
             viewCount.setTitle("\(count)", forState: .Normal)
-            if count > 1{
-                viewsLabel.text = NSLocalizedString("views", comment: "")
-            }else if (count == 1){
-                viewsLabel.text = NSLocalizedString("view", comment: "")
-            }
+        }
+        
+        if let viewsCountDescription = post.viewsCountDescription{
+            viewsLabel.text = viewsCountDescription
         }
     }
 }

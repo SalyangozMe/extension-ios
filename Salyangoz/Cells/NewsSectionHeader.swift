@@ -1,5 +1,5 @@
 //
-//  HomeSectionHeader.swift
+//  NewsSectionHeader.swift
 //  Salyangoz
 //
 //  Created by Muhammed Said Özcan on 13/06/16.
@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import SalyangozKit
 
-class HomeSectionHeader: UITableViewHeaderFooterView{
+class NewsSectionHeader: UITableViewHeaderFooterView{
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     

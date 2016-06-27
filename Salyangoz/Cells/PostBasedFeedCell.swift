@@ -1,5 +1,5 @@
 //
-//  RecentCell.swift
+//  PostBasedFeedCell.swift
 //  Salyangoz
 //
 //  Created by Muhammed Said Özcan on 11/06/16.
@@ -12,7 +12,7 @@ import SalyangozKit
 import TimeAgoInWords
 import AlamofireImage
 
-class RecentCell: UITableViewCell{
+class PostBasedFeedCell: UITableViewCell{
     
     @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var cellDetailLabel: UILabel!
@@ -24,15 +24,20 @@ class RecentCell: UITableViewCell{
         userImageView.layer.masksToBounds = true
     }
  
-    func configureCell(cellItem: Post){
-        cellTitleLabel.text = cellItem.title
-        if let itemURL = cellItem.url, timeAgo = cellItem.updatedAt?.timeAgoInWords(){
-            if let host = itemURL.host{
-                let cellDetailLabelText = "\(host) · \(timeAgo) ago"
-                cellDetailLabel.text = cellDetailLabelText
+    func configureCell(post: Post){
+        cellTitleLabel.text = post.title
+        
+        if let postDetailsDescription = post.postDetailsDescription{
+            cellDetailLabel.text = postDetailsDescription
+            
+            if let count = post.visitCount, desc = post.viewsCountDescription{
+                if count != 0{
+                    cellDetailLabel.text = postDetailsDescription + " · \(count) \(desc)"
+                }
             }
         }
-        if let user: User = cellItem.owner{
+        
+        if let user: User = post.owner{
             if let profileImageURL = user.profileImageURL{
                 userImageView.af_setImageWithURL(profileImageURL)
             }
