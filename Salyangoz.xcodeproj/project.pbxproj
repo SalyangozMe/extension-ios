@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		87B9D53C7A115B898B0D9B5D /* Pods_Salyangoz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2AE48F649CC57CA320A663 /* Pods_Salyangoz.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		B3190A141D1C18C20083892E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3190A131D1C18C20083892E /* MainInterface.storyboard */; };
 		B320DEA71D0B83BD00CD9A59 /* SalyangozButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEA61D0B83BD00CD9A59 /* SalyangozButton.swift */; };
-		B320DEAF1D0B899600CD9A59 /* RecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEAE1D0B899600CD9A59 /* RecentCell.swift */; };
+		B320DEAF1D0B899600CD9A59 /* PostBasedFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEAE1D0B899600CD9A59 /* PostBasedFeedCell.swift */; };
 		B320DEB21D0B8BD800CD9A59 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B320DEB01D0B8BC700CD9A59 /* RobotoCondensed-Italic.ttf */; };
 		B320DEB31D0B8BD800CD9A59 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B320DEB11D0B8BC700CD9A59 /* RobotoCondensed-Regular.ttf */; };
-		B320DEBC1D0BA53A00CD9A59 /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEBB1D0BA53A00CD9A59 /* RecentView.swift */; };
-		B320DEBE1D0BA78500CD9A59 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEBD1D0BA78500CD9A59 /* HomeView.swift */; };
+		B320DEBC1D0BA53A00CD9A59 /* PostBasedFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEBB1D0BA53A00CD9A59 /* PostBasedFeedView.swift */; };
+		B320DEBE1D0BA78500CD9A59 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEBD1D0BA78500CD9A59 /* NewsView.swift */; };
 		B320DEC11D0BA81300CD9A59 /* BarAppearances.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEC01D0BA81300CD9A59 /* BarAppearances.swift */; };
 		B320DEC31D0BAC3C00CD9A59 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEC21D0BAC3C00CD9A59 /* UIViewControllerExtension.swift */; };
 		B320DEC51D0BB77D00CD9A59 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320DEC41D0BB77D00CD9A59 /* UIColorExtension.swift */; };
-		B353246A1D0A2A2F00DA1476 /* SalyangozKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36F37DA1D0A1FBD00A33958 /* SalyangozKit.framework */; };
 		B3637F501D086D2D002A3AFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3637F4F1D086D2D002A3AFF /* AppDelegate.swift */; };
 		B3637F521D086D2D002A3AFF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3637F511D086D2D002A3AFF /* LoginView.swift */; };
 		B3637F551D086D2D002A3AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3637F531D086D2D002A3AFF /* Main.storyboard */; };
@@ -38,24 +38,25 @@
 		B36F37A11D09BD9300A33958 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B396DA5A1D09B2D100D9133B /* Roboto-MediumItalic.ttf */; };
 		B36F37A21D09BD9300A33958 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B396DA5B1D09B2D100D9133B /* Roboto-Regular.ttf */; };
 		B36F37C31D0A040400A33958 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36F37C21D0A040400A33958 /* ShareViewController.swift */; };
-		B36F37C61D0A040400A33958 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B36F37C41D0A040400A33958 /* MainInterface.storyboard */; };
 		B36F37CA1D0A040400A33958 /* SalyangozShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B36F37C01D0A040400A33958 /* SalyangozShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B36F37DD1D0A1FBD00A33958 /* SalyangozKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B36F37DC1D0A1FBD00A33958 /* SalyangozKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B36F37E21D0A1FBD00A33958 /* SalyangozKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B36F37DA1D0A1FBD00A33958 /* SalyangozKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B36F37E71D0A1FCB00A33958 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36F37E61D0A1FCB00A33958 /* DataManager.swift */; };
 		B36F37E91D0A20B500A33958 /* SalyangozAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36F37E81D0A20B500A33958 /* SalyangozAPI.swift */; };
-		B382FFE01D0DF9E2003DBDB6 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382FFDF1D0DF9E2003DBDB6 /* HomeCell.swift */; };
+		B37BAD7F1D20379600171EEC /* SalyangozKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36F37DA1D0A1FBD00A33958 /* SalyangozKit.framework */; };
+		B37BAD851D20543D00171EEC /* PostBasedFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37BAD841D20543D00171EEC /* PostBasedFeedCell.xib */; };
+		B37BAD8D1D213BD100171EEC /* SalyangozTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BAD8C1D213BD100171EEC /* SalyangozTabBarController.swift */; };
+		B37BAD8F1D213E0400171EEC /* PostBasedFeedDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BAD8E1D213E0400171EEC /* PostBasedFeedDataSourceProtocol.swift */; };
+		B382FFE01D0DF9E2003DBDB6 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382FFDF1D0DF9E2003DBDB6 /* NewsCell.swift */; };
 		B382FFE21D0E2637003DBDB6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382FFE11D0E2637003DBDB6 /* User.swift */; };
 		B382FFE41D0E2669003DBDB6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382FFE31D0E2669003DBDB6 /* Post.swift */; };
 		B382FFE61D0E288C003DBDB6 /* Transforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382FFE51D0E288C003DBDB6 /* Transforms.swift */; };
 		B396DA4F1D09A4D700D9133B /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B396DA4E1D09A4D700D9133B /* Wireframe.swift */; };
 		B396DA651D09B3FB00D9133B /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B396DA641D09B3FB00D9133B /* UIFontExtension.swift */; };
-		B398AF431D0A535100D26C5B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B398AF421D0A535100D26C5B /* CoreData.framework */; };
 		B39E65151D0AF2C8005937C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3637F561D086D2D002A3AFF /* Assets.xcassets */; };
 		B3DCC7CD1D10490B000E711A /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DCC7CC1D10490B000E711A /* TutorialView.swift */; };
 		B3DCC7D21D10524C000E711A /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DCC7D11D10524C000E711A /* TutorialPageViewController.swift */; };
 		B3DCC7D51D105677000E711A /* TutorialContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DCC7D41D105677000E711A /* TutorialContainerView.swift */; };
-		B3DE077E1D0A40E400D6B6FF /* SharePreprocessor.js in Resources */ = {isa = PBXBuildFile; fileRef = B3DE077D1D0A40E400D6B6FF /* SharePreprocessor.js */; };
 		B3E7A3BE1D11760B00004B2E /* ListRefreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7A3BD1D11760B00004B2E /* ListRefreshable.swift */; };
 		B3E7A3CB1D11AD0B00004B2E /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7A3C91D11AD0B00004B2E /* PullToRefresh.swift */; };
 		B3E7A3CC1D11AD0B00004B2E /* UIScrollView+PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7A3CA1D11AD0B00004B2E /* UIScrollView+PullToRefresh.swift */; };
@@ -64,8 +65,8 @@
 		B3EE052A1D142CDE007182BB /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EE04DC1D142AD7007182BB /* KeychainAccess.framework */; };
 		B3EE052B1D142CDE007182BB /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EE04DD1D142AD7007182BB /* ObjectMapper.framework */; };
 		B3FE975C1D0EBA9A002CA1C6 /* NSBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FE975B1D0EBA9A002CA1C6 /* NSBundleExtension.swift */; };
-		B3FE975E1D0EDE26002CA1C6 /* HomeSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FE975D1D0EDE26002CA1C6 /* HomeSectionHeader.swift */; };
-		B3FE97601D0EDE98002CA1C6 /* HomeSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3FE975F1D0EDE98002CA1C6 /* HomeSectionHeader.xib */; };
+		B3FE975E1D0EDE26002CA1C6 /* NewsSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FE975D1D0EDE26002CA1C6 /* NewsSectionHeader.swift */; };
+		B3FE97601D0EDE98002CA1C6 /* NewsSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3FE975F1D0EDE98002CA1C6 /* NewsSectionHeader.xib */; };
 		FDBF3540AB4815504202C06B /* Pods_SalyangozKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 903D8A320BACC0CAB742E739 /* Pods_SalyangozKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -127,12 +128,13 @@
 		4C2AE48F649CC57CA320A663 /* Pods_Salyangoz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Salyangoz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		903D8A320BACC0CAB742E739 /* Pods_SalyangozKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SalyangozKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3096E191D14AAC6004A6C1F /* Salyangoz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Salyangoz.entitlements; sourceTree = "<group>"; };
+		B3190A131D1C18C20083892E /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		B320DEA61D0B83BD00CD9A59 /* SalyangozButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SalyangozButton.swift; path = CustomUI/SalyangozButton.swift; sourceTree = "<group>"; };
-		B320DEAE1D0B899600CD9A59 /* RecentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecentCell.swift; path = Cells/RecentCell.swift; sourceTree = "<group>"; };
+		B320DEAE1D0B899600CD9A59 /* PostBasedFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostBasedFeedCell.swift; path = Cells/PostBasedFeedCell.swift; sourceTree = "<group>"; };
 		B320DEB01D0B8BC700CD9A59 /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RobotoCondensed-Italic.ttf"; path = "Assets/Fonts/RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
 		B320DEB11D0B8BC700CD9A59 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RobotoCondensed-Regular.ttf"; path = "Assets/Fonts/RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
-		B320DEBB1D0BA53A00CD9A59 /* RecentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentView.swift; sourceTree = "<group>"; };
-		B320DEBD1D0BA78500CD9A59 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B320DEBB1D0BA53A00CD9A59 /* PostBasedFeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostBasedFeedView.swift; sourceTree = "<group>"; };
+		B320DEBD1D0BA78500CD9A59 /* NewsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		B320DEC01D0BA81300CD9A59 /* BarAppearances.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarAppearances.swift; path = Protocols/BarAppearances.swift; sourceTree = "<group>"; };
 		B320DEC21D0BAC3C00CD9A59 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B320DEC41D0BB77D00CD9A59 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -154,14 +156,16 @@
 		B36CB74C1D11697100437016 /* TutorialImage5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TutorialImage5.png; path = Assets/TutorialAssets/TutorialImage5.png; sourceTree = "<group>"; };
 		B36F37C01D0A040400A33958 /* SalyangozShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SalyangozShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36F37C21D0A040400A33958 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		B36F37C51D0A040400A33958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		B36F37C71D0A040400A33958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B36F37DA1D0A1FBD00A33958 /* SalyangozKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SalyangozKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36F37DC1D0A1FBD00A33958 /* SalyangozKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SalyangozKit.h; sourceTree = "<group>"; };
 		B36F37DE1D0A1FBD00A33958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B36F37E61D0A1FCB00A33958 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		B36F37E81D0A20B500A33958 /* SalyangozAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalyangozAPI.swift; sourceTree = "<group>"; };
-		B382FFDF1D0DF9E2003DBDB6 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeCell.swift; path = Cells/HomeCell.swift; sourceTree = "<group>"; };
+		B37BAD841D20543D00171EEC /* PostBasedFeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostBasedFeedCell.xib; path = "Storyboards & Nibs/PostBasedFeedCell.xib"; sourceTree = "<group>"; };
+		B37BAD8C1D213BD100171EEC /* SalyangozTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalyangozTabBarController.swift; sourceTree = "<group>"; };
+		B37BAD8E1D213E0400171EEC /* PostBasedFeedDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostBasedFeedDataSourceProtocol.swift; path = Protocols/PostBasedFeedDataSourceProtocol.swift; sourceTree = "<group>"; };
+		B382FFDF1D0DF9E2003DBDB6 /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsCell.swift; path = Cells/NewsCell.swift; sourceTree = "<group>"; };
 		B382FFE11D0E2637003DBDB6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		B382FFE31D0E2669003DBDB6 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = Models/Post.swift; sourceTree = "<group>"; };
 		B382FFE51D0E288C003DBDB6 /* Transforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Transforms.swift; path = Models/Transforms.swift; sourceTree = "<group>"; };
@@ -179,7 +183,6 @@
 		B3DCC7D11D10524C000E711A /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		B3DCC7D41D105677000E711A /* TutorialContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContainerView.swift; sourceTree = "<group>"; };
 		B3DE07421D0A2D1000D6B6FF /* Salyangoz.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Salyangoz.xcodeproj; sourceTree = "<group>"; };
-		B3DE077D1D0A40E400D6B6FF /* SharePreprocessor.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = SharePreprocessor.js; sourceTree = "<group>"; };
 		B3E7A3BD1D11760B00004B2E /* ListRefreshable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListRefreshable.swift; path = Protocols/ListRefreshable.swift; sourceTree = "<group>"; };
 		B3E7A3C91D11AD0B00004B2E /* PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
 		B3E7A3CA1D11AD0B00004B2E /* UIScrollView+PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+PullToRefresh.swift"; sourceTree = "<group>"; };
@@ -189,8 +192,8 @@
 		B3EE04DC1D142AD7007182BB /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Salyangoz-dieoqexbidxagpecdyihahzbhepy/Build/Products/Debug-iphoneos/KeychainAccess/KeychainAccess.framework"; sourceTree = "<group>"; };
 		B3EE04DD1D142AD7007182BB /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Salyangoz-dieoqexbidxagpecdyihahzbhepy/Build/Products/Debug-iphoneos/ObjectMapper/ObjectMapper.framework"; sourceTree = "<group>"; };
 		B3FE975B1D0EBA9A002CA1C6 /* NSBundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSBundleExtension.swift; path = Extensions/NSBundleExtension.swift; sourceTree = "<group>"; };
-		B3FE975D1D0EDE26002CA1C6 /* HomeSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeSectionHeader.swift; path = Cells/HomeSectionHeader.swift; sourceTree = "<group>"; };
-		B3FE975F1D0EDE98002CA1C6 /* HomeSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeSectionHeader.xib; path = "Storyboards & Nibs/HomeSectionHeader.xib"; sourceTree = "<group>"; };
+		B3FE975D1D0EDE26002CA1C6 /* NewsSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsSectionHeader.swift; path = Cells/NewsSectionHeader.swift; sourceTree = "<group>"; };
+		B3FE975F1D0EDE98002CA1C6 /* NewsSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsSectionHeader.xib; path = "Storyboards & Nibs/NewsSectionHeader.xib"; sourceTree = "<group>"; };
 		B5F9011904854766F2B9ECED /* Pods-SalyangozKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalyangozKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SalyangozKit/Pods-SalyangozKit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,8 +210,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B398AF431D0A535100D26C5B /* CoreData.framework in Frameworks */,
-				B353246A1D0A2A2F00DA1476 /* SalyangozKit.framework in Frameworks */,
+				B37BAD7F1D20379600171EEC /* SalyangozKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +251,9 @@
 		B320DEAD1D0B897900CD9A59 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				B320DEAE1D0B899600CD9A59 /* RecentCell.swift */,
-				B382FFDF1D0DF9E2003DBDB6 /* HomeCell.swift */,
-				B3FE975D1D0EDE26002CA1C6 /* HomeSectionHeader.swift */,
+				B320DEAE1D0B899600CD9A59 /* PostBasedFeedCell.swift */,
+				B382FFDF1D0DF9E2003DBDB6 /* NewsCell.swift */,
+				B3FE975D1D0EDE26002CA1C6 /* NewsSectionHeader.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -271,6 +273,7 @@
 			children = (
 				B320DEC01D0BA81300CD9A59 /* BarAppearances.swift */,
 				B3E7A3BD1D11760B00004B2E /* ListRefreshable.swift */,
+				B37BAD8E1D213E0400171EEC /* PostBasedFeedDataSourceProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -329,7 +332,8 @@
 			children = (
 				B3637F531D086D2D002A3AFF /* Main.storyboard */,
 				B3637F581D086D2D002A3AFF /* LaunchScreen.storyboard */,
-				B3FE975F1D0EDE98002CA1C6 /* HomeSectionHeader.xib */,
+				B3FE975F1D0EDE98002CA1C6 /* NewsSectionHeader.xib */,
+				B37BAD841D20543D00171EEC /* PostBasedFeedCell.xib */,
 			);
 			name = "Storyboards & Nibs";
 			sourceTree = "<group>";
@@ -358,12 +362,11 @@
 		B3637F811D0980EC002A3AFF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B320DEBD1D0BA78500CD9A59 /* HomeView.swift */,
 				B3637F511D086D2D002A3AFF /* LoginView.swift */,
-				B320DEBB1D0BA53A00CD9A59 /* RecentView.swift */,
-				B3DCC7CC1D10490B000E711A /* TutorialView.swift */,
-				B3DCC7D11D10524C000E711A /* TutorialPageViewController.swift */,
-				B3DCC7D41D105677000E711A /* TutorialContainerView.swift */,
+				B320DEBD1D0BA78500CD9A59 /* NewsView.swift */,
+				B320DEBB1D0BA53A00CD9A59 /* PostBasedFeedView.swift */,
+				B37BAD8C1D213BD100171EEC /* SalyangozTabBarController.swift */,
+				B37BAD891D2132C000171EEC /* Tutorial */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -383,11 +386,10 @@
 		B36F37C11D0A040400A33958 /* SalyangozShareExtension */ = {
 			isa = PBXGroup;
 			children = (
+				B3190A131D1C18C20083892E /* MainInterface.storyboard */,
 				B34373CA1D16D9BC00E0DD50 /* SalyangozShareExtension.entitlements */,
 				B36F37C21D0A040400A33958 /* ShareViewController.swift */,
-				B36F37C41D0A040400A33958 /* MainInterface.storyboard */,
 				B36F37C71D0A040400A33958 /* Info.plist */,
-				B3DE077D1D0A40E400D6B6FF /* SharePreprocessor.js */,
 			);
 			path = SalyangozShareExtension;
 			sourceTree = "<group>";
@@ -403,6 +405,16 @@
 				B36F37DC1D0A1FBD00A33958 /* SalyangozKit.h */,
 			);
 			path = SalyangozKit;
+			sourceTree = "<group>";
+		};
+		B37BAD891D2132C000171EEC /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				B3DCC7D41D105677000E711A /* TutorialContainerView.swift */,
+				B3DCC7D11D10524C000E711A /* TutorialPageViewController.swift */,
+				B3DCC7CC1D10490B000E711A /* TutorialView.swift */,
+			);
+			name = Tutorial;
 			sourceTree = "<group>";
 		};
 		B396DA501D09B29400D9133B /* Assets */ = {
@@ -648,10 +660,11 @@
 				B36F37A21D09BD9300A33958 /* Roboto-Regular.ttf in Resources */,
 				B36CB7511D11697100437016 /* TutorialImage5.png in Resources */,
 				B3637F5A1D086D2D002A3AFF /* LaunchScreen.storyboard in Resources */,
+				B37BAD851D20543D00171EEC /* PostBasedFeedCell.xib in Resources */,
 				B3637F741D08AE96002A3AFF /* Credentials.plist in Resources */,
 				B36CB7501D11697100437016 /* TutorialImage3.png in Resources */,
 				B3637F571D086D2D002A3AFF /* Assets.xcassets in Resources */,
-				B3FE97601D0EDE98002CA1C6 /* HomeSectionHeader.xib in Resources */,
+				B3FE97601D0EDE98002CA1C6 /* NewsSectionHeader.xib in Resources */,
 				B3637F551D086D2D002A3AFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -661,8 +674,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B39E65151D0AF2C8005937C0 /* Assets.xcassets in Resources */,
-				B36F37C61D0A040400A33958 /* MainInterface.storyboard in Resources */,
-				B3DE077E1D0A40E400D6B6FF /* SharePreprocessor.js in Resources */,
+				B3190A141D1C18C20083892E /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,15 +890,17 @@
 			files = (
 				B3E7A3BE1D11760B00004B2E /* ListRefreshable.swift in Sources */,
 				B396DA4F1D09A4D700D9133B /* Wireframe.swift in Sources */,
+				B37BAD8F1D213E0400171EEC /* PostBasedFeedDataSourceProtocol.swift in Sources */,
 				B320DEC51D0BB77D00CD9A59 /* UIColorExtension.swift in Sources */,
 				B3DCC7D51D105677000E711A /* TutorialContainerView.swift in Sources */,
-				B320DEBC1D0BA53A00CD9A59 /* RecentView.swift in Sources */,
-				B382FFE01D0DF9E2003DBDB6 /* HomeCell.swift in Sources */,
-				B3FE975E1D0EDE26002CA1C6 /* HomeSectionHeader.swift in Sources */,
-				B320DEAF1D0B899600CD9A59 /* RecentCell.swift in Sources */,
+				B320DEBC1D0BA53A00CD9A59 /* PostBasedFeedView.swift in Sources */,
+				B382FFE01D0DF9E2003DBDB6 /* NewsCell.swift in Sources */,
+				B3FE975E1D0EDE26002CA1C6 /* NewsSectionHeader.swift in Sources */,
+				B320DEAF1D0B899600CD9A59 /* PostBasedFeedCell.swift in Sources */,
 				B3637F881D0999A6002A3AFF /* UIStoryboardExtension.swift in Sources */,
 				B320DEC11D0BA81300CD9A59 /* BarAppearances.swift in Sources */,
-				B320DEBE1D0BA78500CD9A59 /* HomeView.swift in Sources */,
+				B320DEBE1D0BA78500CD9A59 /* NewsView.swift in Sources */,
+				B37BAD8D1D213BD100171EEC /* SalyangozTabBarController.swift in Sources */,
 				B3DCC7CD1D10490B000E711A /* TutorialView.swift in Sources */,
 				B3E7A3CC1D11AD0B00004B2E /* UIScrollView+PullToRefresh.swift in Sources */,
 				B320DEC31D0BAC3C00CD9A59 /* UIViewControllerExtension.swift in Sources */,
@@ -953,14 +967,6 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		B36F37C41D0A040400A33958 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B36F37C51D0A040400A33958 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -982,7 +988,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Muhammed Said Ozcan (Z2EVZ5Y6JY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Muhammed Said Ozcan (Z2EVZ5Y6JY)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -1030,7 +1037,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Muhammed Said Ozcan (Z2EVZ5Y6JY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Muhammed Said Ozcan (Z2EVZ5Y6JY)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
@@ -1048,6 +1056,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 2.3;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -1062,8 +1071,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Salyangoz/Salyangoz.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammed Said Ozcan (92WZ92SNDJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Muhammed Said Ozcan (92WZ92SNDJ)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
@@ -1077,7 +1086,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = me.salyangoz.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b796171b-34fa-47c5-bcc8-b0c7125d0227";
 				SWIFT_VERSION = 2.2;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
@@ -1091,8 +1100,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Salyangoz/Salyangoz.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Muhammed Said Ozcan (Z2EVZ5Y6JY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Muhammed Said Ozcan (Z2EVZ5Y6JY)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1105,7 +1114,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = me.salyangoz.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b796171b-34fa-47c5-bcc8-b0c7125d0227";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 2.2;
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -1119,8 +1128,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = SalyangozShareExtension/SalyangozShareExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammed Said Ozcan (92WZ92SNDJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Muhammed Said Ozcan (92WZ92SNDJ)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SalyangozShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1128,7 +1137,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.salyangoz.ios.ext-share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b796171b-34fa-47c5-bcc8-b0c7125d0227";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 2.2;
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -1142,8 +1151,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = SalyangozShareExtension/SalyangozShareExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Muhammed Said Ozcan (Z2EVZ5Y6JY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Muhammed Said Ozcan (Z2EVZ5Y6JY)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SalyangozShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1151,7 +1160,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.salyangoz.ios.ext-share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b796171b-34fa-47c5-bcc8-b0c7125d0227";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 2.2;
@@ -1167,8 +1176,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1213,8 +1222,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
