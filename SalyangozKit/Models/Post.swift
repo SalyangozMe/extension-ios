@@ -8,6 +8,7 @@
 
 import Foundation
 import ObjectMapper
+import TimeAgoInWords
 import AlamofireObjectMapper
 
 public class Post: NSObject, Mappable{
@@ -17,6 +18,31 @@ public class Post: NSObject, Mappable{
     public var title: String?
     public var visitCount: Int?
     public var updatedAt: NSDate?
+    public var postDetailsDescription: String?{
+        get {
+            if let itemURL = url, timeAgo = updatedAt?.timeAgoInWords(){
+                if let host = itemURL.host{
+                    return "\(host) · \(timeAgo) ago"
+                }
+            }
+            return ""
+        }
+    }
+    
+    public var viewsCountDescription: String?{
+        get {
+            if let count = visitCount{
+                if count > 1{
+                    return NSLocalizedString("views", comment: "")
+                }else if (count == 1){
+                    return NSLocalizedString("view", comment: "")
+                }else{
+                    return NSLocalizedString("views", comment: "")
+                }
+            }
+            return ""
+        }
+    }
     
     lazy var dateFormatter: NSDateFormatter = {
         let dateFormatter: NSDateFormatter = NSDateFormatter()
